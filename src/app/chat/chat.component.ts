@@ -3,11 +3,14 @@ import { NgScrollbar } from 'ngx-scrollbar';
 import { MatListItem } from '@angular/material';
 import { SocketioService } from '@app/core/services/socketio/socketio.service';
 import { Message } from '@app/core/models/message.interface';
-import { Store } from '@ngrx/store';
+import { Store, select } from '@ngrx/store';
 import { IAppState } from '@app/core/store/state/app.state';
 import { Observable } from 'rxjs';
 import { SendMessage, SaveCurrentMsg } from "@app/core/store/actions/chat.actions";
 import { selectChat } from '@app/core/store/selectors/chat.selector';
+import { map, tap, distinctUntilChanged } from 'rxjs/operators';
+import { IUser } from '@app/core/models/user.interface';
+import { selectSettings } from '@app/core/store/selectors/settings.selector';
 
 
 @Component({
@@ -20,6 +23,7 @@ export class ChatComponent implements OnInit {
   @ViewChild(NgScrollbar) scrollbarRef: NgScrollbar;
   @ViewChildren('allMessagesItems') messagesItems: QueryList<MatListItem>;
   appstate$: Observable<IAppState>;
+  user: IUser;
 
 
   messages: Message[] = [];
@@ -31,7 +35,12 @@ export class ChatComponent implements OnInit {
 
   ngOnInit() {
     this.appstate$ = this.store;
+    this.appstate$.pipe(
+      select(selectSettings),
+      map(settings => settings.user)
+    ).subscribe(user => {this.user = user});
   }
+  
   ngAfterViewInit(){
     setTimeout(() => {
       this.messageField.nativeElement.focus();
@@ -46,10 +55,7 @@ export class ChatComponent implements OnInit {
   sendMessage(ev: string){
     if(ev){
       const msg = {
-        user: {
-          userid: 1234,
-          username: "guest1234"
-        },
+        user: this.user,
         time: new Date(),
         message: ev
       }

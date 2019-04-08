@@ -9,7 +9,6 @@ import { MaterialModule } from './material.module';
 
 import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
-import { SharedModule } from '@app/shared';
 import { ChatModule } from './chat/chat.module';
 import { SettingsModule } from './settings/settings.module';
 
@@ -26,7 +25,6 @@ import { AppRoutingModule } from './app-routing.module';
     BrowserAnimationsModule,
     MaterialModule,
     CoreModule,
-    SharedModule,
     ChatModule,
     SettingsModule,
     AppRoutingModule

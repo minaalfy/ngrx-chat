@@ -1,4 +1,4 @@
-<div class="clearfix" @items [ngClass]="{'from-me' : even, 'from-them': odd}">
+<div class="clearfix from-them" *ngIf="settings$ | async as settings" @items [ngClass]="{'from-me' : (message?.user?.userid === settings?.user?.userid), 'from-them': (message?.user?.userid !== settings?.user?.userid)}">
   <div class="message">
     {{message.message}}
     <small>{{message.time | date: format}}</small>

@@ -8,7 +8,7 @@ import { Message } from "../../models/message.interface";
 })
 export class SocketioService extends Socket {
   chatReceived$ = this.fromEvent("chat-received");
-
+  userCreated$ = this.fromOneTimeEvent("user-created");
   constructor() {
     super({
       url: environment.serverUrl,

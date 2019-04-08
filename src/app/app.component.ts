@@ -12,6 +12,7 @@ import { Store } from "@ngrx/store";
 import { IAppState } from "./core/store/state/app.state";
 import { ReveiveMsg } from "./core/store/actions/chat.actions";
 import { Message } from "./core/models/message.interface";
+import { SetUserID } from "./core/store/actions/settings.actions";
 
 const log = new Logger("App");
 
@@ -39,7 +40,11 @@ export class AppComponent implements OnInit {
     }
     this.socket.chatReceived$.subscribe((c: Message)=>{
       this.store.dispatch(new ReveiveMsg(c));
-    })
+    });
+
+    this.socket.userCreated$.then((id: number)=>{
+      this.store.dispatch(new SetUserID(id));
+    });
 
     log.debug("init");
 

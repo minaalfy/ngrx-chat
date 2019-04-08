@@ -5,6 +5,7 @@ export const environment = {
   production: true,
   serverUrl: 'http://localhost:3000',
   defaultLanguage: 'en-US',
+  defaultUserName: 'Guest',
   supportedLanguages: [
     'en-US',
     'ar-EG'

@@ -10,8 +10,8 @@ export interface ISettingsState {
 
 export const initialSettingsState: ISettingsState = {
   user: {
-    userid: 1234,
-    username: "guest1234"
+    userid: 0,
+    username: "Guest0"
   },
   theme: "light-theme",
   clock: true,

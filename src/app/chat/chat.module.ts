@@ -5,7 +5,6 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule } from "@angular/forms";
 
 import { CoreModule } from "@app/core";
-import { SharedModule } from "@app/shared";
 import { MaterialModule } from "@app/material.module";
 import { NgScrollbarModule } from "ngx-scrollbar";
 import { ChatRoutingModule } from "./chat-routing.module";
@@ -19,7 +18,6 @@ import { MessageComponent } from "./message/message.component";
     TranslateModule,
     FormsModule,
     CoreModule,
-    SharedModule,
     FlexLayoutModule,
     MaterialModule,
     NgScrollbarModule,
