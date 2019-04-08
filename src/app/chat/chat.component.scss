@@ -1,0 +1,23 @@
+.no-padding {
+  padding: 0;
+}
+ng-scrollbar {
+  height: calc( 100vh - 106px );
+}
+.chat-input {
+    margin: 0 0 -16px;
+    input {
+        border: none;
+        outline: none;
+        flex: 1;
+        padding: 0 12px;
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+:host-context(.dark-theme) .chat-input input {
+  background: #424242;
+  color: #fff;
+}

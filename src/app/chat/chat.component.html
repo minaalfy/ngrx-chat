@@ -1,0 +1,20 @@
+<div class="main-container">
+  <mat-card class="no-padding">
+    <mat-card-content *ngIf="appstate$ | async as appstate">
+      <ng-scrollbar class="chat-list" shown="always">
+        <app-message #allMessagesItems *ngFor="let msg of appstate.chat.messages;let odd = odd;let even=even" [message]="msg" [even]="even" [odd]="odd"></app-message>
+      </ng-scrollbar>
+      <div class="chat-input">
+        <mat-divider></mat-divider>
+        <div class="chat-input" fxLayout="row">
+          <input autocomplete="off" matInput [placeholder]="'ChatView.EnterMSG' | translate" #messageText
+            [ngModel]="text"
+            (keydown.control.enter)="appstate.settings?.sendonenter ? sendMessage(messageText.value) : false">
+          <button mat-icon-button matSuffix color="primary" (click)="sendMessage(messageText.value)">
+            <mat-icon aria-label="Example icon-button with a heart icon">send</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

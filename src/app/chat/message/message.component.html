@@ -1,0 +1,6 @@
+<div class="clearfix" @items [ngClass]="{'from-me' : even, 'from-them': odd}">
+  <div class="message">
+    {{message.message}}
+    <small>{{message.time | date: format}}</small>
+  </div>
+</div>

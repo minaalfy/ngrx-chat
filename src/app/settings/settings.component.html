@@ -1,0 +1,61 @@
+<div class="main-container">
+  <mat-card fxLayout="column" *ngIf="settings$ | async as settings">
+    <mat-card-content fxLayout="column" fxFlex="1">
+
+      <mat-form-field appearance="fill" class="mb-20">
+        <mat-label translate>SettingsView.Username</mat-label>
+        <mat-icon matPrefix color="primary">account_circle</mat-icon>
+        <input matInput placeholder="User Name" (keyup)="onUserNameChange($event.target.value)"
+          [ngModel]="settings.user?.username" #userName>
+      </mat-form-field>
+
+      <div class="mb-20">
+        <mat-label class="field-label mb-10">
+          <mat-icon color="primary">invert_colors</mat-icon> {{"SettingsView.InterfaceColor" | translate}}:
+        </mat-label>
+        <mat-radio-group (change)="onThemeChange($event.value)">
+          <mat-radio-button color="primary" value="light-theme" [checked]="settings.theme === 'light-theme'" translate>
+            Light</mat-radio-button>
+          <mat-radio-button color="primary" value="dark-theme" [checked]="settings.theme === 'dark-theme'" translate>
+            Dark</mat-radio-button>
+        </mat-radio-group>
+      </div>
+
+      <div class="mb-20">
+        <label class="field-label mb-10">
+          <mat-icon color="primary">access_time</mat-icon> {{"SettingsView.ClockDisplay" | translate}}:
+        </label>
+        <mat-button-toggle-group name="displayTime" (change)="onTimeDisplayChange($event.value)"
+          aria-label="display time" color="primary">
+          <mat-button-toggle color="primary" [value]="true" [checked]="settings.clock">12
+            {{"SettingsView.Hours" | translate}}</mat-button-toggle>
+          <mat-button-toggle color="primary" [value]="false" [checked]="!settings.clock">24
+            {{"SettingsView.Hours" | translate}}</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+
+      <div class="mb-20">
+        <mat-icon color="primary">send</mat-icon>
+        <mat-slide-toggle color="primary" labelPosition="before" [checked]="settings.sendonenter"
+          (change)="onSendOnEnterToggle($event.checked)">
+          <mat-label class="field-label" translate>SettingsView.SendOnEnter</mat-label>
+        </mat-slide-toggle>
+      </div>
+      <mat-form-field appearance="fill" class="mb-20" fxFlex fxGrow="2">
+        <mat-label translate>SettingsView.Language</mat-label>
+        <mat-icon matPrefix color="primary">language</mat-icon>
+        <mat-select name="language" [ngModel]="settings.language" (selectionChange)="onLanguageSelect($event.value)">
+          <mat-option *ngFor="let language of languages" [value]="language">{{language | translate}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div>
+          <mat-divider></mat-divider>
+      </div>
+      <div fxLayout="column" class="card-actions">
+        <button mat-flat-button color="primary" (click)="reset()">
+          <mat-icon>settings_backup_restore</mat-icon> {{"SettingsView.Reset" | translate}}
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

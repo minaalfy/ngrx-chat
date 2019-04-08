@@ -1,0 +1,59 @@
+/*
+ * Global application theme.
+ * Framework overrides and customization goes here.
+ */
+
+// stylelint-disable-next-line selector-max-universal
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 100%;
+}
+.clearfix:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.ng-scroll-view{
+  overflow-x: hidden !important;
+}
+.main-container {
+  padding: 0 16px 16px;
+  max-width: 800px;
+  margin: 0 auto;
+
+  >.mat-card {
+    border-radius: 0 0 4px 4px;
+    min-height: calc(100vh - 64px); // Header height 48 + 16 from main container padding
+  }
+}
+
+.card-actions {
+  padding-top: 16px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-20 {
+  margin-bottom: 32px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mat-form-field.no-padding {
+  margin-bottom: -1.25em;
+}

@@ -1,0 +1,21 @@
+{
+  "APP_NAME": "chat-app",
+  "Settings": "اعدادات",
+  "en-US": "English",
+  "ar-EG": "العربية",
+  "Chat": "دردشة",
+  "SettingsView": {
+    "Username": "اسم المستخدم",
+    "InterfaceColor": "لون الواجهة",
+    "Light": "مضيئ",
+    "Dark": "مظلم",
+    "ClockDisplay": "عرض الساعة",
+    "Hours": "ساعة",
+    "SendOnEnter": "إرسال الرسائل على CTRL + ENTER",
+    "Language": "اللغة",
+    "Reset": "الرجوع للاعدادات الافتراضية"
+  },
+  "ChatView": {
+    "EnterMSG": "ادخل رسالتك..."
+  }
+}

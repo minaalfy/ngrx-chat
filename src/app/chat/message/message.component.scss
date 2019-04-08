@@ -1,0 +1,58 @@
+.message {
+    border-radius: 20px;
+    clear: both;
+    margin: 5px 0;
+    max-width: 80%;
+    padding: 10px 15px;
+    position: relative;
+  
+    &:after {
+      border-radius: 50%;
+      bottom: 0;
+      content: " ";
+      height: 30px;
+      position: absolute;
+      width: 30px;
+      z-index: -1;
+    }
+}
+  
+  
+.from-them {
+  transform-origin: bottom left;
+  .message {
+    background: #dedede;
+    float: left;
+    margin-left: 30px;
+    &:after{
+      box-shadow: inset 1px 9px 0 4px #fff, inset -9px 0px 0 2px #dedede, 0 0 0 1px #fff;
+      left: -19px;
+    }
+  }
+}
+.from-me {
+  transform-origin: bottom right;
+  .message {
+    background: #2d8cfa;
+    color: #fff;
+    float: right;
+    margin-right: 30px;
+    &:after {
+      box-shadow: inset -1px 9px 0 4px #fff, inset 9px 1px 0 2px #2d8cfa, 0 0 0 1px #fff;
+      right: -19px;
+    }
+  }
+}
+
+
+:host-context(.dark-theme) .from-them .message{
+  background: #333;
+  &:after {
+    box-shadow: inset 1px 9px 0 4px #424242, inset -9px 0px 0 2px #333, 0 0 0 1px #424242;
+}}
+:host-context(.dark-theme) .from-me .message{
+    background: #666;
+    &:after {
+      box-shadow: inset -1px 9px 0 4px #424242, inset 9px 1px 0 2px #666, 0 0 0 1px #424242;
+  }
+}
