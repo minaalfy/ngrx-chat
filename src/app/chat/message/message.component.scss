@@ -27,6 +27,7 @@
 }
 .from-them {
   transform-origin: bottom left;
+  order: 1;
   .message {
     background: #dedede;
     margin-left: 30px;
@@ -39,6 +40,8 @@
 }
 .from-me {
   transform-origin: bottom right;
+  order: 3;
+  text-align: right;
   .message {
     background: #2d8cfa;
     color: #fff;
@@ -51,9 +54,13 @@
   .message-meta {align-self: flex-end;}
 }
 .flex-fix {
-  flex: 1
+  flex: 1;
+  order: 2;
 }
-
+:host-context([dir=rtl])  {
+  .from-me {order: 1;}
+  .from-them {order: 3;text-align: left}
+}
 :host-context(.dark-theme) {
   .from-them{
     .message{

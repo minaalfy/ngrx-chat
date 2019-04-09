@@ -3,6 +3,7 @@ import { CommonModule } from "@angular/common";
 import { TranslateModule } from "@ngx-translate/core";
 import { FlexLayoutModule } from "@angular/flex-layout";
 import { FormsModule } from "@angular/forms";
+import { PickerModule } from '@ctrl/ngx-emoji-mart'
 
 import { CoreModule } from "@app/core";
 import { MaterialModule } from "@app/material.module";
@@ -21,6 +22,7 @@ import { MessageComponent } from "./message/message.component";
     FlexLayoutModule,
     MaterialModule,
     NgScrollbarModule,
+    PickerModule,
     ChatRoutingModule
   ],
   declarations: [ChatComponent, MessageComponent],

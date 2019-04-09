@@ -10,9 +10,11 @@
           <input autocomplete="off" matInput [placeholder]="'ChatView.EnterMSG' | translate" #messageText
             [ngModel]="text"
             (keydown.control.enter)="appstate.settings?.sendonenter ? sendMessage(messageText.value) : false">
-          <button mat-icon-button matSuffix color="primary" (click)="sendMessage(messageText.value)">
-            <mat-icon aria-label="Example icon-button with a heart icon">send</mat-icon>
-          </button>
+            <mat-button-toggle disableRipple="true" [checked]="emojiShow" (change)="emojiShow = $event.source.checked;messageText.focus()"><mat-icon>sentiment_satisfied_alt</mat-icon></mat-button-toggle>
+            <button mat-icon-button matSuffix color="primary" (click)="sendMessage(messageText.value)">
+              <mat-icon>send</mat-icon>
+            </button>
+          <emoji-mart [title]="'ChatView.pickEmoji' | translate" [hidden]="!emojiShow" emoji="point_up" [i18n]="'ChatView.emoji' | translate" [showPreview]="false" [isNative]="true" (emojiSelect)="addEmoji($event)"></emoji-mart>
         </div>
       </div>
     </mat-card-content>

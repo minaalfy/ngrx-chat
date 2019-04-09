@@ -16,7 +16,20 @@ ng-scrollbar {
         }
     }
 }
-
+.mat-button-toggle-standalone.mat-button-toggle-appearance-standard {
+  border-radius: 0;
+}
+emoji-mart {
+  position: absolute;
+  bottom: 48px;
+  right: 40px;
+}
+:host-context([dir=rtl])  {
+  emoji-mart {
+    right: auto;
+    left: 40px;
+  }
+}
 :host-context(.dark-theme) .chat-input input {
   background: #424242;
   color: #fff;

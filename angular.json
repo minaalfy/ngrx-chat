@@ -30,6 +30,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@ctrl/ngx-emoji-mart/picker.css",
               "src/main.scss"
             ],
             "scripts": []

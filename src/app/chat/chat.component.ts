@@ -7,7 +7,7 @@ import { IAppState } from '@app/core/store/state/app.state';
 import { Observable } from 'rxjs';
 import { SendMessage, SaveCurrentMsg, BlinkTab, UnreadCount } from "@app/core/store/actions/chat.actions";
 import { selectChat } from '@app/core/store/selectors/chat.selector';
-import { map, first, distinctUntilChanged, tap } from 'rxjs/operators';
+import { map, first } from 'rxjs/operators';
 import { IUser } from '@app/core/models/user.interface';
 import { selectSettings } from '@app/core/store/selectors/settings.selector';
 
@@ -23,6 +23,7 @@ export class ChatComponent implements OnInit {
   @ViewChildren('allMessagesItems') messagesItems: QueryList<MatListItem>;
   appstate$: Observable<IAppState>;
   user: IUser;
+  emojiShow = false;
 
 
   messages: Message[] = [];
@@ -80,5 +81,10 @@ export class ChatComponent implements OnInit {
     if(this.messageField.nativeElement.value) {
       this.store.dispatch(new SaveCurrentMsg(this.messageField.nativeElement.value));
     }
+  }
+
+  addEmoji(ev: any) {
+    console.log(ev.emoji);
+    this.messageField.nativeElement.value += ' ' + ev.emoji.native + ' ';
   }
 }
