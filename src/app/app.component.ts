@@ -2,17 +2,19 @@ import { Component, OnInit } from "@angular/core";
 import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 import { TranslateService } from "@ngx-translate/core";
-import { merge } from "rxjs";
+import { merge, Observable } from "rxjs";
 import { filter, map, mergeMap } from "rxjs/operators";
 import { SocketioService } from '@app/core/services/socketio/socketio.service';
 
 import { environment } from "@env/environment";
 import { Logger, I18nService } from "@app/core";
-import { Store } from "@ngrx/store";
+import { Store, select } from "@ngrx/store";
 import { IAppState } from "./core/store/state/app.state";
 import { ReveiveMsg } from "./core/store/actions/chat.actions";
 import { Message } from "./core/models/message.interface";
 import { SetUserID } from "./core/store/actions/settings.actions";
+import { IChatState } from "./core/store/state/chat.state";
+import { selectChat } from "./core/store/selectors/chat.selector";
 
 const log = new Logger("App");
 
@@ -22,7 +24,7 @@ const log = new Logger("App");
   styleUrls: ["./app.component.scss"]
 })
 export class AppComponent implements OnInit {
-
+  chat$: Observable<IChatState>;
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -33,20 +35,17 @@ export class AppComponent implements OnInit {
     private store: Store<IAppState>
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     // Setup logger
     if (environment.production) {
       Logger.enableProductionMode();
     }
-    this.socket.chatReceived$.subscribe((c: Message)=>{
-      this.store.dispatch(new ReveiveMsg(c));
+    this.chat$ = this.store.pipe(select(selectChat));
+    this.socket.chatReceived$.subscribe((m: Message)=>{
+      this.store.dispatch(new ReveiveMsg(m));
     });
-
-    this.socket.userCreated$.then((id: number)=>{
-      this.store.dispatch(new SetUserID(id));
-    });
-
-    log.debug("init");
+    const id = <number>await this.socket.userCreated$;
+    this.store.dispatch(new SetUserID(id));
 
     // Setup translations
     this.i18nService.init(environment.defaultLanguage, environment.supportedLanguages);

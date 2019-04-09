@@ -1,4 +1,5 @@
 import { IUser } from "@app/core/models/user.interface";
+import { environment } from "@env/environment.prod";
 
 export interface ISettingsState {
     user: IUser;
@@ -11,7 +12,7 @@ export interface ISettingsState {
 export const initialSettingsState: ISettingsState = {
   user: {
     userid: 0,
-    username: "Guest0"
+    username: environment.defaultUserName
   },
   theme: "light-theme",
   clock: true,

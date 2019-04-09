@@ -5,7 +5,8 @@ export enum EChatActions {
   ReveiveMsg = "[Chat] Receive Message",
   SendMessage = "[Chat] Send Message",
   SaveCurrentMsg = "[Chat] Save current message",
-  BlinkTab = "[Chat] Toggle Tab Blink"
+  BlinkTab = "[Chat] Toggle Tab Blink",
+  UnreadCount = "[Chat] Unread Messages Counted"
 }
 
 export class ReveiveMsg implements Action {
@@ -29,4 +30,9 @@ export class BlinkTab implements Action {
   constructor(public payload: boolean) {}
 }
 
-export type ChatActions = ReveiveMsg | SendMessage | SaveCurrentMsg | BlinkTab;
+export class UnreadCount implements Action {
+  public readonly type = EChatActions.UnreadCount;
+  constructor(public payload: number) {}
+}
+
+export type ChatActions = ReveiveMsg | SendMessage | SaveCurrentMsg | BlinkTab | UnreadCount;

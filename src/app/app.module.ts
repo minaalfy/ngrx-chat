@@ -14,6 +14,7 @@ import { SettingsModule } from './settings/settings.module';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { MatBadgeModule } from '@angular/material';
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
     TranslateModule.forRoot(),
     BrowserAnimationsModule,
     MaterialModule,
+    MatBadgeModule,
     CoreModule,
     ChatModule,
     SettingsModule,

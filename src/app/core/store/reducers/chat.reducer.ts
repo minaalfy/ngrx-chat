@@ -25,7 +25,13 @@ export function chatReducers (state = initialChatState, action: ChatActions): IC
     case EChatActions.BlinkTab: {
       return {
         ...state,
-        blinkChat: action.payload
+        blink: action.payload
+      };
+    }
+    case EChatActions.UnreadCount: {
+      return {
+        ...state,
+        unread: action.payload
       };
     }
 

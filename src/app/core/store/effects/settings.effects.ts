@@ -22,6 +22,7 @@ export class SettingsEffects {
   persistSettings = this.actions$.pipe(
     ofType(
       ESettingsActions.ChangeClock,
+      ESettingsActions.SetUserID,
       ESettingsActions.ChangeLanguage,
       ESettingsActions.ChangeName,
       ESettingsActions.ChangeSendOnEnter,

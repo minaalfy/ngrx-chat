@@ -1,6 +1,14 @@
-<div class="clearfix from-them" *ngIf="settings$ | async as settings" @items [ngClass]="{'from-me' : (message?.user?.userid === settings?.user?.userid), 'from-them': (message?.user?.userid !== settings?.user?.userid)}">
-  <div class="message">
-    {{message.message}}
-    <small>{{message.time | date: format}}</small>
+<div *ngIf="settings$ | async as settings" fxLayout="row">
+  <div *ngIf="message?.user?.userid === settings?.user?.userid" class="flex-fix"></div>
+  <div class="clearfix from-them" @items
+    [ngClass]="{'from-me' : (message?.user?.userid === settings?.user?.userid), 'from-them': (message?.user?.userid !== settings?.user?.userid)}">
+    <small class="message-meta">
+      <span *ngIf="message?.user?.userid !== settings?.user?.userid">{{message.user?.username}} , </span>
+      {{message.time | date: format}}
+    </small>
+    <div class="message">
+      {{message.message}}
+    </div>
   </div>
+  <div *ngIf="message?.user?.userid !== settings?.user?.userid" class="flex-fix"></div>
 </div>

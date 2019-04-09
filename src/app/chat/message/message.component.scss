@@ -1,7 +1,6 @@
 .message {
     border-radius: 20px;
     clear: both;
-    margin: 5px 0;
     max-width: 80%;
     padding: 10px 15px;
     position: relative;
@@ -16,18 +15,26 @@
       z-index: -1;
     }
 }
-  
-  
+
+.message-meta {
+  margin: 0 50px;
+  color: #aaa;
+}
+.from-them, .from-me {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
 .from-them {
   transform-origin: bottom left;
   .message {
     background: #dedede;
-    float: left;
     margin-left: 30px;
     &:after{
       box-shadow: inset 1px 9px 0 4px #fff, inset -9px 0px 0 2px #dedede, 0 0 0 1px #fff;
       left: -19px;
     }
+    .message-meta {align-self: flex-start;}
   }
 }
 .from-me {
@@ -35,24 +42,33 @@
   .message {
     background: #2d8cfa;
     color: #fff;
-    float: right;
     margin-right: 30px;
     &:after {
       box-shadow: inset -1px 9px 0 4px #fff, inset 9px 1px 0 2px #2d8cfa, 0 0 0 1px #fff;
       right: -19px;
     }
   }
+  .message-meta {align-self: flex-end;}
+}
+.flex-fix {
+  flex: 1
 }
 
-
-:host-context(.dark-theme) .from-them .message{
-  background: #333;
-  &:after {
-    box-shadow: inset 1px 9px 0 4px #424242, inset -9px 0px 0 2px #333, 0 0 0 1px #424242;
-}}
-:host-context(.dark-theme) .from-me .message{
-    background: #666;
-    &:after {
-      box-shadow: inset -1px 9px 0 4px #424242, inset 9px 1px 0 2px #666, 0 0 0 1px #424242;
+:host-context(.dark-theme) {
+  .from-them{
+    .message{
+      background: #333;
+      &:after {
+        box-shadow: inset 1px 9px 0 4px #424242, inset -9px 0px 0 2px #333, 0 0 0 1px #424242;
+      }
+    }
+  }
+  .from-me {
+    .message{
+      background: #666;
+      &:after {
+        box-shadow: inset -1px 9px 0 4px #424242, inset 9px 1px 0 2px #666, 0 0 0 1px #424242;
+      }
+    }
   }
 }

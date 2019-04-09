@@ -1,7 +1,7 @@
 <nav>
-  <div mat-tab-nav-bar mat-align-tabs="center" color="primary" backgroundColor="primary">
+  <div mat-tab-nav-bar mat-align-tabs="center" color="primary" backgroundColor="primary" *ngIf="chat$ | async as chat">
     <a mat-tab-link routerLink="/chat" routerLinkActive #rlaH="routerLinkActive" [active]="rlaH.isActive">
-      <span translate>Chat</span>
+      <span [class.blink]="chat.blink" [matBadge]="chat.unread" matBadgeOverlap="false" matBadgeColor="accent" matBadgePosition="above after" [matBadgeHidden]="!chat.unread" translate>Chat</span>
     </a>
     <a mat-tab-link routerLink="/settings" routerLinkActive #rlaA="routerLinkActive" [active]="rlaA.isActive">
       <span translate>Settings</span>

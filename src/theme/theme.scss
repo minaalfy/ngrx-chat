@@ -57,3 +57,7 @@ body {
 .mat-form-field.no-padding {
   margin-bottom: -1.25em;
 }
+
+.mat-tab-label-active:not(.mat-tab-disabled) {
+  opacity: 1;
+}

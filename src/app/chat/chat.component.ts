@@ -1,14 +1,13 @@
-import { Component, OnInit, ElementRef, ViewChild, QueryList, ViewChildren, ɵConsole } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild, QueryList, ViewChildren } from '@angular/core';
 import { NgScrollbar } from 'ngx-scrollbar';
 import { MatListItem } from '@angular/material';
-import { SocketioService } from '@app/core/services/socketio/socketio.service';
 import { Message } from '@app/core/models/message.interface';
 import { Store, select } from '@ngrx/store';
 import { IAppState } from '@app/core/store/state/app.state';
 import { Observable } from 'rxjs';
-import { SendMessage, SaveCurrentMsg } from "@app/core/store/actions/chat.actions";
+import { SendMessage, SaveCurrentMsg, BlinkTab, UnreadCount } from "@app/core/store/actions/chat.actions";
 import { selectChat } from '@app/core/store/selectors/chat.selector';
-import { map, tap, distinctUntilChanged } from 'rxjs/operators';
+import { map, first, distinctUntilChanged, tap } from 'rxjs/operators';
 import { IUser } from '@app/core/models/user.interface';
 import { selectSettings } from '@app/core/store/selectors/settings.selector';
 
@@ -29,7 +28,6 @@ export class ChatComponent implements OnInit {
   messages: Message[] = [];
   text: string;
   constructor(
-    private socket: SocketioService,
     private store: Store<IAppState>
     ) { }
 
@@ -38,7 +36,22 @@ export class ChatComponent implements OnInit {
     this.appstate$.pipe(
       select(selectSettings),
       map(settings => settings.user)
-    ).subscribe(user => {this.user = user});
+    ).subscribe(user =>{
+        this.user = user;
+    });
+    
+    this.appstate$.pipe(
+      select(selectChat),
+      first()
+      ).subscribe(chat => {
+      if(chat.blink){
+        this.store.dispatch(new BlinkTab(false));
+      }
+      if(chat.unread) {
+        this.store.dispatch(new UnreadCount(0));
+      }
+    });
+
   }
   
   ngAfterViewInit(){
