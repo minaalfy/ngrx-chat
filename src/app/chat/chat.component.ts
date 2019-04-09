@@ -11,27 +11,48 @@ import { map, first } from 'rxjs/operators';
 import { IUser } from '@app/core/models/user.interface';
 import { selectSettings } from '@app/core/store/selectors/settings.selector';
 
-
+/**
+* ChatComponent is a container for messages and chat input with it's options
+*/
 @Component({
   selector: 'app-chat',
   templateUrl: './chat.component.html',
   styleUrls: ['./chat.component.scss']
 })
 export class ChatComponent implements OnInit {
+  /**
+  * reference to chat input element
+  */
   @ViewChild("messageText") messageField: ElementRef;
+  /**
+  * reference to messages container element
+  */
   @ViewChild(NgScrollbar) scrollbarRef: NgScrollbar;
+  /**
+  * reference to messages elements
+  */
   @ViewChildren('allMessagesItems') messagesItems: QueryList<MatListItem>;
+  /**
+  * reference to State
+  */
   appstate$: Observable<IAppState>;
+  /**
+  * reference to User object
+  */
   user: IUser;
+  /**
+  * Boolean to show/hide emoji list
+  */
   emojiShow = false;
-
-
-  messages: Message[] = [];
-  text: string;
+  /**
+  * inject Store
+  */
   constructor(
     private store: Store<IAppState>
     ) { }
-
+  /**
+  * declate state, subscribe to changes in userid, reset blink animation, reset unread message counter
+  */
   ngOnInit() {
     this.appstate$ = this.store;
     this.appstate$.pipe(
@@ -40,7 +61,6 @@ export class ChatComponent implements OnInit {
     ).subscribe(user =>{
         this.user = user;
     });
-    
     this.appstate$.pipe(
       select(selectChat),
       first()
@@ -52,9 +72,10 @@ export class ChatComponent implements OnInit {
         this.store.dispatch(new UnreadCount(0));
       }
     });
-
   }
-  
+  /**
+  * remove blick animation, reset the unread message counter and scroll messages to bottom
+  */
   ngAfterViewInit(){
     setTimeout(() => {
       this.messageField.nativeElement.focus();
@@ -66,6 +87,9 @@ export class ChatComponent implements OnInit {
       });
     });
   }
+  /**
+  * build message object the dispatch the store with SendMessage action
+  */
   sendMessage(ev: string){
     if(ev){
       const msg = {
@@ -76,15 +100,18 @@ export class ChatComponent implements OnInit {
       this.store.dispatch(new SendMessage(msg));
     }
   }
-
+  /**
+  * save current text in the input before leave the chat page
+  */
   ngOnDestroy(){
     if(this.messageField.nativeElement.value) {
       this.store.dispatch(new SaveCurrentMsg(this.messageField.nativeElement.value));
     }
   }
-
+  /**
+  * Add emoji to the input after selection
+  */
   addEmoji(ev: any) {
-    console.log(ev.emoji);
     this.messageField.nativeElement.value += ' ' + ev.emoji.native + ' ';
   }
 }

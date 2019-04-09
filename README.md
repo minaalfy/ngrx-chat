@@ -1,15 +1,47 @@
 # chat-app
 
-This project was generated with [ngX-Rocket](https://github.com/ngx-rocket/generator-ngx-rocket/)
-version 5.3.0
+An Angular Chat Application with Redux implementation using ngrx and Angular material.
+
+
+# Features
+###App
+    - NGRX implementation
+    - 2 Languages "English and Arabic"
+    - 2 interface directions "LTR, RTL"
+    - All customization saved in local storage
+
+###Settings Page
+    - Ability to customize "User name, Interface theme, Clock Display, Send messages on CTRL+ENTER, - - - Interface Language"
+    - Ability to reset all customization to defaults
+
+###Chat Page
+    - Socket.io based chat interface
+    - Unique User Ids to identify user messages
+    - 2 message themes one for current user messages floated right and other one for other people floated to left
+    - animations for messages enterance
+    - Emoji :)
+    - Blink when receive message when the user on another tab
+    - Unread messages counter
+    - Nice Custom scrollbar with auto scroll to bottom
+    - save user entered text before leaving the page and restore it once get back to the page
+    - send message on click send button or on CTRL+ENTER while focus on input.
+    - Input autofocus on page init
+    - Input text with Off autocomplete
+
+
+# TODO
+    - Real Authentication
+    - Chat history
+    - Browser notifications and "favico.js" for Unread messages
+    - Sounds for each action "Audio sprite using HowlerJS"
+
+
 
 # Getting started
 
 1. Go to project folder and install dependencies:
- ```sh
- npm install
- ```
-
+| npm install
+ 
 2. Launch development server, and open `localhost:4200` in your browser:
  ```sh
  npm start
@@ -17,14 +49,16 @@ version 5.3.0
 
 # Project structure
 
-```
+```sh
 dist/                        web app production build
 docs/                        project docs and coding guides
+documentation/               Full project documentation
 e2e/                         end-to-end tests
 src/                         project source code
 |- app/                      app components
-|  |- core/                  core module (singleton services and single-use components)
-|  |- shared/                shared module  (common components, directives and pipes)
+|  |- core/                  core module (singleton services and store)
+|  |- chat/                  chat module  (chat component, message component)
+|  |- settings/              settings module  (settings component)
 |  |- app.component.*        app root component (shell)
 |  |- app.module.ts          app root module definition
 |  |- app-routing.module.ts  app routes
@@ -33,13 +67,13 @@ src/                         project source code
 |- environments/             values for various build environments
 |- theme/                    app global scss variables and theme
 |- translations/             translations files
+|- testing/                  testing utils
 |- index.html                html entry point
 |- main.scss                 global style entry point
 |- main.ts                   app entry point
 |- polyfills.ts              polyfills needed by Angular
 +- test.ts                   unit tests entry point
 reports/                     test and coverage reports
-proxy.conf.js                backend proxy configuration
 ```
 
 # Main tasks
@@ -125,7 +159,5 @@ Development, build and quality processes are based on [angular-cli](https://gith
 #### Other documentation
 
 - [I18n guide](docs/i18n.md)
-- [Working behind a corporate proxy](docs/corporate-proxy.md)
 - [Updating dependencies and tools](docs/updating.md)
-- [Using a backend proxy for development](docs/backend-proxy.md)
 - [Browser routing](docs/routing.md)

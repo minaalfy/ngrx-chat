@@ -5,11 +5,6 @@ import { RouteReuseStrategy, RouterModule } from "@angular/router";
 import { TranslateModule } from "@ngx-translate/core";
 import { RouteReusableStrategy } from "./route-reusable-strategy";
 import { I18nService } from "./i18n.service";
-import { HttpService } from "./http/http.service";
-import { HttpCacheService } from "./http/http-cache.service";
-import { ApiPrefixInterceptor } from "./http/api-prefix.interceptor";
-import { ErrorHandlerInterceptor } from "./http/error-handler.interceptor";
-import { CacheInterceptor } from "./http/cache.interceptor";
 import { LocalStorageService } from "./services/local-storage/local-storage.service";
 import { environment } from "@env/environment";
 
@@ -39,14 +34,6 @@ import { SocketIoModule } from "ngx-socket-io";
   ],
   providers: [
     I18nService,
-    HttpCacheService,
-    ApiPrefixInterceptor,
-    ErrorHandlerInterceptor,
-    CacheInterceptor,
-    {
-      provide: HttpClient,
-      useClass: HttpService
-    },
     {
       provide: RouteReuseStrategy,
       useClass: RouteReusableStrategy

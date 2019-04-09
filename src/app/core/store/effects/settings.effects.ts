@@ -8,7 +8,9 @@ import { LocalStorageService } from "@app/core";
 import { tap, withLatestFrom, map, distinctUntilChanged } from "rxjs/operators";
 import { IAppState } from "@app/core/store/state/app.state";
 import { selectSettings } from "@app/core/store/selectors/settings.selector";
-
+/**
+* SettingsEffects class used to attach side effects for store settings actions
+*/
 @Injectable()
 export class SettingsEffects {
   constructor(
@@ -17,7 +19,9 @@ export class SettingsEffects {
     private localStorageService: LocalStorageService,
     private translateService: TranslateService
   ) {}
-
+  /**
+  * attach setitem to localstorage with each action in ESettingsActions
+  */
   @Effect({ dispatch: false })
   persistSettings = this.actions$.pipe(
     ofType(
@@ -34,7 +38,9 @@ export class SettingsEffects {
       this.localStorageService.setItem('SETTINGS', settings)
     )
   );
-
+  /**
+  * attach translateservice use method with each change in store settings.language
+  */
   @Effect({ dispatch: false })
   setTranslateServiceLanguage = this.store.pipe(
     select(selectSettings),
@@ -47,6 +53,9 @@ export class SettingsEffects {
   );
 
 
+  /**
+  * add current theme class to document.bosy on each settings.theme change
+  */
   @Effect({ dispatch: false })
   updateTheme = this.store.pipe(
     select(selectSettings),

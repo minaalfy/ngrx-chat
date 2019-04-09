@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 
+  /**
+  * Prefix for our app keys in local storage
+  */
 const APP_PREFIX = 'CHATAPP-';
-
+/**
+* LocalStorageService service to get and set store changes to local storage
+*/
 @Injectable()
 export class LocalStorageService {
-  constructor() {}
-
+  /**
+  * check if the localstorage have store data and load it 
+  */
   static loadInitialState() {
     return Object.keys(localStorage).reduce((state: any, storageKey) => {
       if (storageKey.includes(APP_PREFIX)) {
@@ -37,15 +43,21 @@ export class LocalStorageService {
       return state;
     }, {});
   }
-
+  /**
+  * Set item to localstorage
+  */
   setItem(key: string, value: any) {
     localStorage.setItem(`${APP_PREFIX}${key}`, JSON.stringify(value));
   }
-
+  /**
+  * get item from localstorage
+  */
   getItem(key: string) {
     return JSON.parse(localStorage.getItem(`${APP_PREFIX}${key}`));
   }
-
+  /**
+  * remove item from localstorage
+  */
   removeItem(key: string) {
     localStorage.removeItem(`${APP_PREFIX}${key}`);
   }

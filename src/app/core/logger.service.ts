@@ -101,7 +101,9 @@ export class Logger {
   error(...objects: any[]) {
     this.log(console.error, LogLevel.Error, objects);
   }
-
+  /**
+  * Logs messages or objects with log level.
+  */
   private log(func: Function, level: LogLevel, objects: any[]) {
     if (level <= Logger.level) {
       const log = this.source ? ['[' + this.source + ']'].concat(objects) : objects;

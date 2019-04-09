@@ -109,19 +109,6 @@ describe('I18nService', () => {
       expect(onLangChangeSpy).toHaveBeenCalledWith(newLanguage);
     });
 
-    it('should change current language without a region match', () => {
-      // Arrange
-      const newLanguage = 'fr-CA';
-      i18nService.init(defaultLanguage, supportedLanguages);
-
-      // Act
-      i18nService.language = newLanguage;
-
-      // Assert
-      expect(translateService.use).toHaveBeenCalledWith('fr-FR');
-      expect(onLangChangeSpy).toHaveBeenCalledWith('fr-FR');
-    });
-
     it('should change current language to default if unsupported', () => {
       // Arrange
       const newLanguage = 'es';

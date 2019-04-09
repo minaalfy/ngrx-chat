@@ -15,7 +15,9 @@ import { IAppState } from "../state/app.state";
 import { Store, select } from "@ngrx/store";
 import { map, tap, first, withLatestFrom } from "rxjs/operators";
 import { selectChat } from "../selectors/chat.selector";
-
+/**
+* ChatEffects class used to attach side effects for store chat actions
+*/
 @Injectable()
 export class ChatEffects {
   constructor(
@@ -24,7 +26,9 @@ export class ChatEffects {
     private localStorageService: LocalStorageService,
     private socket: SocketioService
   ) {}
-
+  /**
+  * attach setitem to localstorage with each action in EChatActions
+  */
   @Effect({ dispatch: false })
   persistSettings = this.actions$.pipe(
     ofType(
@@ -37,7 +41,9 @@ export class ChatEffects {
       this.localStorageService.setItem('MESSAGES', chat)
     )
   );
-
+  /**
+  * attach SendMessage to server event with each store dispatch SendMessage
+  */
   @Effect({ dispatch: false })
   addMessage$ = this.actions$.pipe(
     ofType(EChatActions.SendMessage),
@@ -45,6 +51,9 @@ export class ChatEffects {
     tap(msg => this.socket.chatSend(msg))
   );
 
+  /**
+  * dispatch new BlinkTab(true) and new UnreadCount(state.chat.unread + 1) when ReveiveMsg while the user in another page 
+  */
   @Effect({ dispatch: false })
   receiveMessage$ = this.actions$.pipe(
     ofType(EChatActions.ReveiveMsg),

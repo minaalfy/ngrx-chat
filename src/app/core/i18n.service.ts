@@ -5,8 +5,13 @@ import { includes } from 'lodash';
 import { Logger } from './logger.service';
 import enUS from '../../translations/en-US.json';
 import arEG from '../../translations/ar-EG.json';
-
+/**
+* initialize logger object with prefix 'I18nService'
+*/
 const log = new Logger('I18nService');
+/**
+* initialize language key in local storage
+*/
 const languageKey = 'language';
 
 /**
@@ -21,10 +26,17 @@ export function extract(s: string) {
 
 @Injectable()
 export class I18nService {
-
+  /**
+  * string refrence to system default language
+  */
   defaultLanguage: string;
+  /**
+  * string refrence to system supported languages
+  */
   supportedLanguages: string[];
-
+  /**
+  * inject TranslateService
+  */
   constructor(private translateService: TranslateService) {
     // Embed languages to avoid extra HTTP requests
     translateService.setTranslation('en-US', enUS);
@@ -41,9 +53,6 @@ export class I18nService {
     this.defaultLanguage = defaultLanguage;
     this.supportedLanguages = supportedLanguages;
     this.language = '';
-
-    this.translateService.onLangChange
-      .subscribe((event: LangChangeEvent) => { localStorage.setItem(languageKey, event.lang); });
   }
 
   /**

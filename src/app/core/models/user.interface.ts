@@ -1,4 +1,13 @@
+/**
+ * Build User Data Model
+ */
 export interface IUser {
-    userid: number;
-    username: string;
+  /**
+   * user unique id
+   */
+  userid: number;
+  /**
+   * username
+   */
+  username: string;
 }

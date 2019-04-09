@@ -1,7 +1,18 @@
 import { IUser } from "./user.interface";
-
+/**
+ * Build Message Data Model
+ */
 export interface Message {
-    user: IUser;
-    time: Date;
-    message: string;
+  /**
+   * Message sender info
+   */
+  user: IUser;
+  /**
+   * Message sent datetime
+  */
+  time: Date;
+  /**
+   * Message text
+  */
+  message: string;
 }

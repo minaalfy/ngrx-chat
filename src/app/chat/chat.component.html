@@ -2,7 +2,7 @@
   <mat-card class="no-padding">
     <mat-card-content *ngIf="appstate$ | async as appstate">
       <ng-scrollbar class="chat-list" shown="always">
-        <app-message #allMessagesItems *ngFor="let msg of appstate.chat.messages;let odd = odd;let even=even" [message]="msg" [even]="even" [odd]="odd"></app-message>
+        <app-message #allMessagesItems *ngFor="let msg of appstate.chat.messages" [message]="msg"></app-message>
       </ng-scrollbar>
       <div class="chat-input">
         <mat-divider></mat-divider>

@@ -6,7 +6,9 @@ import { ISettingsState } from '@app/core/store/state/settings.state';
 import { Store, select } from '@ngrx/store';
 import { IAppState } from '@app/core/store/state/app.state';
 import { selectSettings } from '@app/core/store/selectors/settings.selector';
-
+/**
+* MessageComponent is an Angular component that takes Message object and display this message
+*/
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
@@ -22,13 +24,25 @@ import { selectSettings } from '@app/core/store/selectors/settings.selector';
   ]
 })
 export class MessageComponent implements OnInit {
-  @Input() even: boolean;
-  @Input() odd: boolean;
+  /**
+	* Message is the message object the carry the details of the message to be displayed
+	*/
   @Input() message: Message;
+  /**
+	* settings used to retrieve settings store selection
+	*/
   settings$: Observable<ISettingsState>;
+  /**
+	* format string for the date pipe
+	*/
   format: string;
+  /**
+  * inject Store
+  */
   constructor(private store: Store<IAppState>) { }
-
+	/**
+	* Implements ngOnInit to update settings date from the store
+	*/
   ngOnInit() {
     this.settings$ = this.store.pipe(select(selectSettings));
     this.settings$.subscribe((settings)=>{
