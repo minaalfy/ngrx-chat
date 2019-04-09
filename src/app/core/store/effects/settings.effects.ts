@@ -13,6 +13,9 @@ import { selectSettings } from "@app/core/store/selectors/settings.selector";
 */
 @Injectable()
 export class SettingsEffects {
+  /**
+  * inject  Actions, Store, LocalStorageService, TranslateService
+  */
   constructor(
     private actions$: Actions<SettingsActions>,
     private store: Store<IAppState>,

@@ -20,6 +20,9 @@ import { selectChat } from "../selectors/chat.selector";
 */
 @Injectable()
 export class ChatEffects {
+  /**
+  * inject  Actions, Store, LocalStorageService, SocketioService
+  */
   constructor(
     private actions$: Actions<ChatActions>,
     private store: Store<IAppState>,

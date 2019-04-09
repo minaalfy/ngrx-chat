@@ -45,7 +45,6 @@ export class UnreadCount implements Action {
   public readonly type = EChatActions.UnreadCount;
   constructor(public payload: number) {}
 }
-
 /**
 * export ChatActions
 */

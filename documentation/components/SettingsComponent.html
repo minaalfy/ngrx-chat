@@ -1,0 +1,1139 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>chat-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">chat-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>SettingsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/settings/settings.component.ts</code>
+</p>
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>SettingsComponent is an angular component used to customize application interface</p>
+
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-settings</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./settings.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./settings.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#settings$">settings$</a>
+                            </li>
+                            <li>
+                                <a href="#usernameFiels">usernameFiels</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngAfterViewInit">ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onLanguageSelect">onLanguageSelect</a>
+                            </li>
+                            <li>
+                                <a href="#onSendOnEnterToggle">onSendOnEnterToggle</a>
+                            </li>
+                            <li>
+                                <a href="#onThemeChange">onThemeChange</a>
+                            </li>
+                            <li>
+                                <a href="#onTimeDisplayChange">onTimeDisplayChange</a>
+                            </li>
+                            <li>
+                                <a href="#onUserNameChange">onUserNameChange</a>
+                            </li>
+                            <li>
+                                <a href="#reset">reset</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Accessors</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                    <a href="#languages">languages</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(store: <a href="../interfaces/IAppState.html">Store<IAppState></a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/settings/settings.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>inject Store</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/IAppState.html" target="_self" >Store&lt;IAppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterViewInit
+                        </b>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="40"
+                            class="link-to-prism">src/app/settings/settings.component.ts:40</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Focus on username input after view init</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="34"
+                            class="link-to-prism">src/app/settings/settings.component.ts:34</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Implements ngOnInit to update settings date from the store</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onLanguageSelect"></a>
+                    <span class="name">
+                        <b>
+                            onLanguageSelect
+                        </b>
+                        <a href="#onLanguageSelect"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onLanguageSelect(language: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="76"
+                            class="link-to-prism">src/app/settings/settings.component.ts:76</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>dispatch store with ChangeLanguage action on select change</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>language</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSendOnEnterToggle"></a>
+                    <span class="name">
+                        <b>
+                            onSendOnEnterToggle
+                        </b>
+                        <a href="#onSendOnEnterToggle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSendOnEnterToggle(sendonenter: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="70"
+                            class="link-to-prism">src/app/settings/settings.component.ts:70</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>dispatch store with ChangeSendOnEnter action on slider change</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sendonenter</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onThemeChange"></a>
+                    <span class="name">
+                        <b>
+                            onThemeChange
+                        </b>
+                        <a href="#onThemeChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onThemeChange(theme: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="64"
+                            class="link-to-prism">src/app/settings/settings.component.ts:64</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>dispatch store with ChangeTheme action on theme selection change</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>theme</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onTimeDisplayChange"></a>
+                    <span class="name">
+                        <b>
+                            onTimeDisplayChange
+                        </b>
+                        <a href="#onTimeDisplayChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onTimeDisplayChange(clock: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank">boolean</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="58"
+                            class="link-to-prism">src/app/settings/settings.component.ts:58</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>dispatch store with ChangeClock action on clock button toggle change</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>clock</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onUserNameChange"></a>
+                    <span class="name">
+                        <b>
+                            onUserNameChange
+                        </b>
+                        <a href="#onUserNameChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onUserNameChange(name: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="52"
+                            class="link-to-prism">src/app/settings/settings.component.ts:52</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>dispatch store with ChangeName action on username change</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>name</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reset"></a>
+                    <span class="name">
+                        <b>
+                            reset
+                        </b>
+                        <a href="#reset"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>reset()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/settings/settings.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>dispatch store with Reset action on click reset button</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="settings$"></a>
+                        <span class="name">
+                            <b>
+                            settings$</b>
+                            <a href="#settings$"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/ISettingsState.html" target="_self" >Observable&lt;ISettingsState&gt;</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/settings/settings.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>settings used to retrieve settings store selection</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="usernameFiels"></a>
+                        <span class="name">
+                            <b>
+                            usernameFiels</b>
+                            <a href="#usernameFiels"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;userName&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/settings/settings.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>reference to username input element</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="accessors">
+        Accessors
+    </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="languages"></a>
+                        <span class="name"><b>languages</b><a href="#languages"><span class="icon ion-ios-link"></span></a></span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <span class="accessor"><b>get</b><code>languages()</code></span>
+                    </td>
+                </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/settings/settings.component.ts:46</a></div>
+                                </td>
+                            </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-description"><p>return supported languages array to be used for language select</p>
+</div>
+
+                                <div class="io-description">
+                                    <b>Returns : </b>    <code>string[]</code>
+
+                                </div>
+                        </td>
+                    </tr>
+
+            </tbody>
+        </table>
+</section>
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ViewChild, ElementRef } from &#x27;@angular/core&#x27;;
+import { ISettingsState } from &#x27;@app/core/store/state/settings.state&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { Store, select } from &#x27;@ngrx/store&#x27;;
+import { ChangeSendOnEnter, ChangeLanguage, ChangeClock, ChangeTheme, ChangeName, Reset } from &quot;@app/core/store/actions/settings.actions&quot;;
+import { IAppState } from &#x27;@app/core/store/state/app.state&#x27;;
+import { selectSettings } from &#x27;@app/core/store/selectors/settings.selector&#x27;;
+import { environment } from &#x27;@env/environment&#x27;;
+
+/**
+* SettingsComponent is an angular component used to customize application interface
+*/
+@Component({
+  selector: &#x27;app-settings&#x27;,
+  templateUrl: &#x27;./settings.component.html&#x27;,
+  styleUrls: [&#x27;./settings.component.scss&#x27;]
+})
+export class SettingsComponent implements OnInit {
+  /**
+	* settings used to retrieve settings store selection
+	*/
+  settings$: Observable&lt;ISettingsState&gt;;
+  /**
+	* reference to username input element
+	*/
+  @ViewChild(&quot;userName&quot;) usernameFiels: ElementRef;
+  /**
+  * inject Store
+  */
+  constructor(private store: Store&lt;IAppState&gt;) { }
+	/**
+	* Implements ngOnInit to update settings date from the store
+	*/
+  ngOnInit() {
+    this.settings$ &#x3D; this.store.pipe(select(selectSettings));
+  }
+  /**
+  * Focus on username input after view init
+  */
+  ngAfterViewInit(){
+    setTimeout(() &#x3D;&gt; {this.usernameFiels.nativeElement.focus()});
+  }
+  /**
+  * return supported languages array to be used for language select
+  */
+  get languages(): string[] {
+    return environment.supportedLanguages;
+  }
+  /**
+  * dispatch store with ChangeName action on username change
+  */
+  onUserNameChange(name: string) {
+    this.store.dispatch(new ChangeName(name));
+  }
+  /**
+  * dispatch store with ChangeClock action on clock button toggle change
+  */
+  onTimeDisplayChange(clock: boolean) {
+    this.store.dispatch(new ChangeClock(clock));
+  }
+  /**
+  * dispatch store with ChangeTheme action on theme selection change
+  */
+  onThemeChange(theme: string) {
+    this.store.dispatch(new ChangeTheme(theme));
+  }
+  /**
+  * dispatch store with ChangeSendOnEnter action on slider change
+  */
+  onSendOnEnterToggle(sendonenter: boolean) {
+    this.store.dispatch(new ChangeSendOnEnter(sendonenter));
+  }
+  /**
+  * dispatch store with ChangeLanguage action on select change
+  */
+  onLanguageSelect(language: string) {
+    this.store.dispatch(new ChangeLanguage(language));
+  }
+  /**
+  * dispatch store with Reset action on click reset button
+  */
+  reset(){
+    this.store.dispatch(new Reset());
+  }
+  
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;main-container&quot;&gt;
+  &lt;mat-card fxLayout&#x3D;&quot;column&quot; *ngIf&#x3D;&quot;settings$ | async as settings&quot;&gt;
+    &lt;mat-card-content fxLayout&#x3D;&quot;column&quot; fxFlex&#x3D;&quot;1&quot;&gt;
+
+      &lt;mat-form-field appearance&#x3D;&quot;fill&quot; class&#x3D;&quot;mb-20&quot;&gt;
+        &lt;mat-label translate&gt;SettingsView.Username&lt;/mat-label&gt;
+        &lt;mat-icon matPrefix color&#x3D;&quot;primary&quot;&gt;account_circle&lt;/mat-icon&gt;
+        &lt;input matInput placeholder&#x3D;&quot;User Name&quot; (keyup)&#x3D;&quot;onUserNameChange($event.target.value)&quot;
+          [ngModel]&#x3D;&quot;settings.user?.username&quot; #userName&gt;
+      &lt;/mat-form-field&gt;
+
+      &lt;div class&#x3D;&quot;mb-20&quot;&gt;
+        &lt;mat-label class&#x3D;&quot;field-label mb-10&quot;&gt;
+          &lt;mat-icon color&#x3D;&quot;primary&quot;&gt;invert_colors&lt;/mat-icon&gt; {{&quot;SettingsView.InterfaceColor&quot; | translate}}:
+        &lt;/mat-label&gt;
+        &lt;mat-radio-group (change)&#x3D;&quot;onThemeChange($event.value)&quot;&gt;
+          &lt;mat-radio-button color&#x3D;&quot;primary&quot; value&#x3D;&quot;light-theme&quot; [checked]&#x3D;&quot;settings.theme &#x3D;&#x3D;&#x3D; &#x27;light-theme&#x27;&quot; translate&gt;
+            Light&lt;/mat-radio-button&gt;
+          &lt;mat-radio-button color&#x3D;&quot;primary&quot; value&#x3D;&quot;dark-theme&quot; [checked]&#x3D;&quot;settings.theme &#x3D;&#x3D;&#x3D; &#x27;dark-theme&#x27;&quot; translate&gt;
+            Dark&lt;/mat-radio-button&gt;
+        &lt;/mat-radio-group&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;mb-20&quot;&gt;
+        &lt;label class&#x3D;&quot;field-label mb-10&quot;&gt;
+          &lt;mat-icon color&#x3D;&quot;primary&quot;&gt;access_time&lt;/mat-icon&gt; {{&quot;SettingsView.ClockDisplay&quot; | translate}}:
+        &lt;/label&gt;
+        &lt;mat-button-toggle-group name&#x3D;&quot;displayTime&quot; (change)&#x3D;&quot;onTimeDisplayChange($event.value)&quot;
+          aria-label&#x3D;&quot;display time&quot; color&#x3D;&quot;primary&quot;&gt;
+          &lt;mat-button-toggle color&#x3D;&quot;primary&quot; [value]&#x3D;&quot;true&quot; [checked]&#x3D;&quot;settings.clock&quot;&gt;12
+            {{&quot;SettingsView.Hours&quot; | translate}}&lt;/mat-button-toggle&gt;
+          &lt;mat-button-toggle color&#x3D;&quot;primary&quot; [value]&#x3D;&quot;false&quot; [checked]&#x3D;&quot;!settings.clock&quot;&gt;24
+            {{&quot;SettingsView.Hours&quot; | translate}}&lt;/mat-button-toggle&gt;
+        &lt;/mat-button-toggle-group&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;mb-20&quot;&gt;
+        &lt;mat-icon color&#x3D;&quot;primary&quot;&gt;send&lt;/mat-icon&gt;
+        &lt;mat-slide-toggle color&#x3D;&quot;primary&quot; labelPosition&#x3D;&quot;before&quot; [checked]&#x3D;&quot;settings.sendonenter&quot;
+          (change)&#x3D;&quot;onSendOnEnterToggle($event.checked)&quot;&gt;
+          &lt;mat-label class&#x3D;&quot;field-label&quot; translate&gt;SettingsView.SendOnEnter&lt;/mat-label&gt;
+        &lt;/mat-slide-toggle&gt;
+      &lt;/div&gt;
+      &lt;mat-form-field appearance&#x3D;&quot;fill&quot; class&#x3D;&quot;mb-20&quot; fxFlex fxGrow&#x3D;&quot;2&quot;&gt;
+        &lt;mat-label translate&gt;SettingsView.Language&lt;/mat-label&gt;
+        &lt;mat-icon matPrefix color&#x3D;&quot;primary&quot;&gt;language&lt;/mat-icon&gt;
+        &lt;mat-select name&#x3D;&quot;language&quot; [ngModel]&#x3D;&quot;settings.language&quot; (selectionChange)&#x3D;&quot;onLanguageSelect($event.value)&quot;&gt;
+          &lt;mat-option *ngFor&#x3D;&quot;let language of languages&quot; [value]&#x3D;&quot;language&quot;&gt;{{language | translate}}&lt;/mat-option&gt;
+        &lt;/mat-select&gt;
+      &lt;/mat-form-field&gt;
+      &lt;div&gt;
+          &lt;mat-divider&gt;&lt;/mat-divider&gt;
+      &lt;/div&gt;
+      &lt;div fxLayout&#x3D;&quot;column&quot; class&#x3D;&quot;card-actions&quot;&gt;
+        &lt;button mat-flat-button color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;reset()&quot;&gt;
+          &lt;mat-icon&gt;settings_backup_restore&lt;/mat-icon&gt; {{&quot;SettingsView.Reset&quot; | translate}}
+        &lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/mat-card-content&gt;
+  &lt;/mat-card&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./settings.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@media screen and (min-width: 768px) {
+  .field-label {
+    margin-right: 20px;
+    font-size: 1.2em;
+  }
+}
+
+.mat-icon {
+  vertical-align: middle;
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="main-container">  <mat-card fxLayout="column" *ngIf="settings$ | async as settings">    <mat-card-content fxLayout="column" fxFlex="1">      <mat-form-field appearance="fill" class="mb-20">        <mat-label translate>SettingsView.Username</mat-label>        <mat-icon matPrefix color="primary">account_circle</mat-icon>        <input matInput placeholder="User Name" (keyup)="onUserNameChange($event.target.value)"          [ngModel]="settings.user?.username" #userName>      </mat-form-field>      <div class="mb-20">        <mat-label class="field-label mb-10">          <mat-icon color="primary">invert_colors</mat-icon> {{"SettingsView.InterfaceColor" | translate}}:        </mat-label>        <mat-radio-group (change)="onThemeChange($event.value)">          <mat-radio-button color="primary" value="light-theme" [checked]="settings.theme === \'light-theme\'" translate>            Light</mat-radio-button>          <mat-radio-button color="primary" value="dark-theme" [checked]="settings.theme === \'dark-theme\'" translate>            Dark</mat-radio-button>        </mat-radio-group>      </div>      <div class="mb-20">        <label class="field-label mb-10">          <mat-icon color="primary">access_time</mat-icon> {{"SettingsView.ClockDisplay" | translate}}:        </label>        <mat-button-toggle-group name="displayTime" (change)="onTimeDisplayChange($event.value)"          aria-label="display time" color="primary">          <mat-button-toggle color="primary" [value]="true" [checked]="settings.clock">12            {{"SettingsView.Hours" | translate}}</mat-button-toggle>          <mat-button-toggle color="primary" [value]="false" [checked]="!settings.clock">24            {{"SettingsView.Hours" | translate}}</mat-button-toggle>        </mat-button-toggle-group>      </div>      <div class="mb-20">        <mat-icon color="primary">send</mat-icon>        <mat-slide-toggle color="primary" labelPosition="before" [checked]="settings.sendonenter"          (change)="onSendOnEnterToggle($event.checked)">          <mat-label class="field-label" translate>SettingsView.SendOnEnter</mat-label>        </mat-slide-toggle>      </div>      <mat-form-field appearance="fill" class="mb-20" fxFlex fxGrow="2">        <mat-label translate>SettingsView.Language</mat-label>        <mat-icon matPrefix color="primary">language</mat-icon>        <mat-select name="language" [ngModel]="settings.language" (selectionChange)="onLanguageSelect($event.value)">          <mat-option *ngFor="let language of languages" [value]="language">{{language | translate}}</mat-option>        </mat-select>      </mat-form-field>      <div>          <mat-divider></mat-divider>      </div>      <div fxLayout="column" class="card-actions">        <button mat-flat-button color="primary" (click)="reset()">          <mat-icon>settings_backup_restore</mat-icon> {{"SettingsView.Reset" | translate}}        </button>      </div>    </mat-card-content>  </mat-card></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChatComponent', 'selector': 'app-chat'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'SettingsComponent', 'selector': 'app-settings'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SettingsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SettingsComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

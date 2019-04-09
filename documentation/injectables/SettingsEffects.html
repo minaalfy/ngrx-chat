@@ -1,0 +1,505 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>chat-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">chat-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Injectables</li>
+  <li>SettingsEffects</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/store/effects/settings.effects.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>SettingsEffects class used to attach side effects for store settings actions</p>
+
+            </p>
+
+
+
+            <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#persistSettings">persistSettings</a>
+                            </li>
+                            <li>
+                                <a href="#setTranslateServiceLanguage">setTranslateServiceLanguage</a>
+                            </li>
+                            <li>
+                                <a href="#updateTheme">updateTheme</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(actions$: <a href="../undefineds/SettingsActions.html">Actions<SettingsActions></a>, store: <a href="../interfaces/IAppState.html">Store<IAppState></a>, localStorageService: <a href="../injectables/LocalStorageService.html">LocalStorageService</a>, translateService: TranslateService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/store/effects/settings.effects.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>inject  Actions, Store, LocalStorageService, TranslateService</p>
+</div>
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>actions$</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#SettingsActions" target="_self" >Actions&lt;SettingsActions&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>store</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/IAppState.html" target="_self" >Store&lt;IAppState&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>localStorageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LocalStorageService.html" target="_self" >LocalStorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>translateService</td>
+                                                  
+                                                        <td>
+                                                                    <code>TranslateService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="persistSettings"></a>
+                        <span class="name">
+                            <b>
+                            persistSettings</b>
+                            <a href="#persistSettings"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.actions$.pipe(
+    ofType(
+      ESettingsActions.ChangeClock,
+      ESettingsActions.SetUserID,
+      ESettingsActions.ChangeLanguage,
+      ESettingsActions.ChangeName,
+      ESettingsActions.ChangeSendOnEnter,
+      ESettingsActions.ChangeTheme,
+      ESettingsActions.Reset
+    ),
+    withLatestFrom(this.store.pipe(select(selectSettings))),
+    tap(([action, settings]) &#x3D;&gt;
+      this.localStorageService.setItem(&#x27;SETTINGS&#x27;, settings)
+    )
+  )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Effect({dispatch: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/core/store/effects/settings.effects.ts:29</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>attach setitem to localstorage with each action in ESettingsActions</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="setTranslateServiceLanguage"></a>
+                        <span class="name">
+                            <b>
+                            setTranslateServiceLanguage</b>
+                            <a href="#setTranslateServiceLanguage"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.store.pipe(
+    select(selectSettings),
+    map(settings &#x3D;&gt; settings.language),
+    distinctUntilChanged(),
+    tap(language &#x3D;&gt; {
+      this.translateService.use(language);
+      language &#x3D;&#x3D; &quot;en-US&quot; ? (document.dir &#x3D; &quot;ltr&quot;) : (document.dir &#x3D; &quot;rtl&quot;);
+    })
+  )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Effect({dispatch: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/core/store/effects/settings.effects.ts:48</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>attach translateservice use method with each change in store settings.language</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="updateTheme"></a>
+                        <span class="name">
+                            <b>
+                            updateTheme</b>
+                            <a href="#updateTheme"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>this.store.pipe(
+    select(selectSettings),
+    map(settings &#x3D;&gt; settings.theme),
+    distinctUntilChanged(),
+    tap((theme) &#x3D;&gt; {
+      const classList &#x3D; document.body.classList;
+      const toRemove &#x3D; Array.from(classList).filter((item: string) &#x3D;&gt;
+        item.includes(&#x27;-theme&#x27;)
+      );
+      if (toRemove.length) {
+        classList.remove(...toRemove);
+      }
+      classList.add(theme);
+    })
+  )</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @Effect({dispatch: false})<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/core/store/effects/settings.effects.ts:63</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>add current theme class to document.bosy on each settings.theme change</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &quot;@angular/core&quot;;
+import { select, Store } from &quot;@ngrx/store&quot;;
+import { Actions, Effect, ofType } from &quot;@ngrx/effects&quot;;
+import { TranslateService } from &quot;@ngx-translate/core&quot;;
+import { SettingsActions, ESettingsActions } from &quot;@app/core/store/actions/settings.actions&quot;;
+import { LocalStorageService } from &quot;@app/core&quot;;
+
+import { tap, withLatestFrom, map, distinctUntilChanged } from &quot;rxjs/operators&quot;;
+import { IAppState } from &quot;@app/core/store/state/app.state&quot;;
+import { selectSettings } from &quot;@app/core/store/selectors/settings.selector&quot;;
+/**
+* SettingsEffects class used to attach side effects for store settings actions
+*/
+@Injectable()
+export class SettingsEffects {
+  /**
+  * inject  Actions, Store, LocalStorageService, TranslateService
+  */
+  constructor(
+    private actions$: Actions&lt;SettingsActions&gt;,
+    private store: Store&lt;IAppState&gt;,
+    private localStorageService: LocalStorageService,
+    private translateService: TranslateService
+  ) {}
+  /**
+  * attach setitem to localstorage with each action in ESettingsActions
+  */
+  @Effect({ dispatch: false })
+  persistSettings &#x3D; this.actions$.pipe(
+    ofType(
+      ESettingsActions.ChangeClock,
+      ESettingsActions.SetUserID,
+      ESettingsActions.ChangeLanguage,
+      ESettingsActions.ChangeName,
+      ESettingsActions.ChangeSendOnEnter,
+      ESettingsActions.ChangeTheme,
+      ESettingsActions.Reset
+    ),
+    withLatestFrom(this.store.pipe(select(selectSettings))),
+    tap(([action, settings]) &#x3D;&gt;
+      this.localStorageService.setItem(&#x27;SETTINGS&#x27;, settings)
+    )
+  );
+  /**
+  * attach translateservice use method with each change in store settings.language
+  */
+  @Effect({ dispatch: false })
+  setTranslateServiceLanguage &#x3D; this.store.pipe(
+    select(selectSettings),
+    map(settings &#x3D;&gt; settings.language),
+    distinctUntilChanged(),
+    tap(language &#x3D;&gt; {
+      this.translateService.use(language);
+      language &#x3D;&#x3D; &quot;en-US&quot; ? (document.dir &#x3D; &quot;ltr&quot;) : (document.dir &#x3D; &quot;rtl&quot;);
+    })
+  );
+
+
+  /**
+  * add current theme class to document.bosy on each settings.theme change
+  */
+  @Effect({ dispatch: false })
+  updateTheme &#x3D; this.store.pipe(
+    select(selectSettings),
+    map(settings &#x3D;&gt; settings.theme),
+    distinctUntilChanged(),
+    tap((theme) &#x3D;&gt; {
+      const classList &#x3D; document.body.classList;
+      const toRemove &#x3D; Array.from(classList).filter((item: string) &#x3D;&gt;
+        item.includes(&#x27;-theme&#x27;)
+      );
+      if (toRemove.length) {
+        classList.remove(...toRemove);
+      }
+      classList.add(theme);
+    })
+  );
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SettingsEffects.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
