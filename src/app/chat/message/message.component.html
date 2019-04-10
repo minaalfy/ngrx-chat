@@ -7,7 +7,7 @@
       {{message.time | date: format}}
     </small>
     <div class="message">
-      {{message.message}}
+      <div [outerHTML]="message.message | parser"></div>
     </div>
   </div>
 </div>

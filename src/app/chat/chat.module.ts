@@ -12,6 +12,7 @@ import { ChatRoutingModule } from "./chat-routing.module";
 import { ChatComponent } from "./chat.component";
 import { SocketioService } from "@app/core/services/socketio/socketio.service";
 import { MessageComponent } from "./message/message.component";
+import { ParserPipe } from './message/parser.pipe';
 
 @NgModule({
   imports: [
@@ -25,7 +26,7 @@ import { MessageComponent } from "./message/message.component";
     PickerModule,
     ChatRoutingModule
   ],
-  declarations: [ChatComponent, MessageComponent],
+  declarations: [ChatComponent, MessageComponent, ParserPipe],
   providers: [SocketioService]
 })
 export class ChatModule {}

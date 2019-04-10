@@ -7,7 +7,7 @@ import { filter, map, mergeMap } from "rxjs/operators";
 import { SocketioService } from '@app/core/services/socketio/socketio.service';
 
 import { environment } from "@env/environment";
-import { Logger, I18nService } from "@app/core";
+import { Logger } from "@app/core";
 import { Store, select } from "@ngrx/store";
 import { IAppState } from "./core/store/state/app.state";
 import { ReveiveMsg } from "./core/store/actions/chat.actions";
@@ -15,6 +15,9 @@ import { Message } from "./core/models/message.interface";
 import { SetUserID } from "./core/store/actions/settings.actions";
 import { IChatState } from "./core/store/state/chat.state";
 import { selectChat } from "./core/store/selectors/chat.selector";
+
+import enUS from '../translations/en-US.json';
+import arEG from '../translations/ar-EG.json';
 
 const log = new Logger("App");
 
@@ -30,10 +33,12 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private translateService: TranslateService,
-    private i18nService: I18nService,
     private socket: SocketioService,
     private store: Store<IAppState>
-  ) {}
+  ) {
+    translateService.setTranslation('en-US', enUS);
+    translateService.setTranslation('ar-EG', arEG);
+  }
 
   async ngOnInit() {
     // Setup logger
@@ -46,10 +51,7 @@ export class AppComponent implements OnInit {
     });
     const id = <number>await this.socket.userCreated$;
     this.store.dispatch(new SetUserID(id));
-
-    // Setup translations
-    this.i18nService.init(environment.defaultLanguage, environment.supportedLanguages);
-
+    
     const onNavigationEnd = this.router.events.pipe(filter(event => event instanceof NavigationEnd));
 
     // Change page title on navigation or language change, based on route data

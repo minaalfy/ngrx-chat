@@ -85,6 +85,7 @@ export class ChatComponent implements OnInit {
       this.messagesItems.changes.subscribe(() => {
         this.scrollbarRef.scrollToBottom(200);
       });
+      this.scrollbarRef.scrollToBottom(200);
     });
   }
   /**

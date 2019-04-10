@@ -3,7 +3,7 @@ import { By } from '@angular/platform-browser';
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule } from '@ngx-translate/core';
-import { TestingModule, MockStore } from '@testing/utils';
+import { TestingModule, MockStore } from '../testing/utils';
 
 import { CoreModule } from '@app/core';
 import { AppComponent } from './app.component';

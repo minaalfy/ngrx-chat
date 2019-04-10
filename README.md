@@ -4,17 +4,17 @@ An Angular Chat Application with Redux implementation using ngrx and Angular mat
 
 
 # Features
-###App
+### App
     - NGRX implementation
     - 2 Languages "English and Arabic"
     - 2 interface directions "LTR, RTL"
     - All customization saved in local storage
 
-###Settings Page
+### Settings Page
     - Ability to customize "User name, Interface theme, Clock Display, Send messages on CTRL+ENTER, - - - Interface Language"
     - Ability to reset all customization to defaults
 
-###Chat Page
+### Chat Page
     - Socket.io based chat interface
     - Unique User Ids to identify user messages
     - 2 message themes one for current user messages floated right and other one for other people floated to left
@@ -34,7 +34,8 @@ An Angular Chat Application with Redux implementation using ngrx and Angular mat
     - Chat history
     - Browser notifications and "favico.js" for Unread messages
     - Sounds for each action "Audio sprite using HowlerJS"
-
+    - Message grouping “sequence messages from same user”
+    - Add Router animations
 
 
 # Getting started

@@ -4,7 +4,6 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { RouteReuseStrategy, RouterModule } from "@angular/router";
 import { TranslateModule } from "@ngx-translate/core";
 import { RouteReusableStrategy } from "./route-reusable-strategy";
-import { I18nService } from "./i18n.service";
 import { LocalStorageService } from "./services/local-storage/local-storage.service";
 import { environment } from "@env/environment";
 
@@ -20,6 +19,10 @@ import { SettingsEffects } from "@app/core/store/effects/settings.effects";
 import { ChatEffects } from "@app/core/store/effects/chat.effects";
 import { SocketIoModule } from "ngx-socket-io";
 
+export function extract(s: string) {
+  return s;
+}
+
 @NgModule({
   imports: [
     CommonModule,
@@ -33,7 +36,6 @@ import { SocketIoModule } from "ngx-socket-io";
     RouterModule
   ],
   providers: [
-    I18nService,
     {
       provide: RouteReuseStrategy,
       useClass: RouteReusableStrategy

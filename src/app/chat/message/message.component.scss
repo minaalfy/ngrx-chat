@@ -1,7 +1,6 @@
 .message {
     border-radius: 20px;
     clear: both;
-    max-width: 80%;
     padding: 10px 15px;
     position: relative;
   
@@ -15,6 +14,11 @@
       z-index: -1;
     }
 }
+@media only screen and (min-width: 678px) {
+  .message {
+    max-width: 80%;
+  }
+}
 
 .message-meta {
   margin: 0 50px;
@@ -24,10 +28,12 @@
   display: flex;
   flex-direction: column;
   margin: 5px 0;
+  flex: 10;
 }
 .from-them {
   transform-origin: bottom left;
   order: 1;
+  align-items: flex-start;
   .message {
     background: #dedede;
     margin-left: 30px;
@@ -35,13 +41,13 @@
       box-shadow: inset 1px 9px 0 4px #fff, inset -9px 0px 0 2px #dedede, 0 0 0 1px #fff;
       left: -19px;
     }
-    .message-meta {align-self: flex-start;}
   }
 }
 .from-me {
   transform-origin: bottom right;
   order: 3;
   text-align: right;
+  align-items: flex-end;
   .message {
     background: #2d8cfa;
     color: #fff;
@@ -51,15 +57,14 @@
       right: -19px;
     }
   }
-  .message-meta {align-self: flex-end;}
 }
 .flex-fix {
   flex: 1;
   order: 2;
 }
 :host-context([dir=rtl])  {
-  .from-me {order: 1;}
-  .from-them {order: 3;text-align: left}
+  .from-me {order: 1;align-items: flex-start;}
+  .from-them {order: 3;text-align: left;align-items: flex-end;}
 }
 :host-context(.dark-theme) {
   .from-them{
