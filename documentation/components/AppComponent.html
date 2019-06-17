@@ -166,12 +166,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, translateService: TranslateService, i18nService: <a href="../injectables/I18nService.html">I18nService</a>, socket: <a href="../injectables/SocketioService.html">SocketioService</a>, store: <a href="../interfaces/IAppState.html">Store<IAppState></a>)</code>
+<code>constructor(router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, activatedRoute: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>, titleService: <a href="https://angular.io/api/platform-browser/Title" target="_blank">Title</a>, translateService: TranslateService, socket: <a href="../injectables/SocketioService.html">SocketioService</a>, store: <a href="../interfaces/IAppState.html">Store<IAppState></a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/app.component.ts:27</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/app.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -229,18 +229,6 @@
                                                   
                                                         <td>
                                                                     <code>TranslateService</code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>i18nService</td>
-                                                  
-                                                        <td>
-                                                                        <code><a href="../injectables/I18nService.html" target="_self" >I18nService</a></code>
                                                         </td>
                                                   
                                                     <td>
@@ -314,8 +302,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="38"
-                            class="link-to-prism">src/app/app.component.ts:38</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="43"
+                            class="link-to-prism">src/app/app.component.ts:43</a></div>
                 </td>
             </tr>
 
@@ -357,7 +345,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/app.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/app.component.ts:30</a></div>
                             </td>
                         </tr>
 
@@ -379,7 +367,7 @@ import { filter, map, mergeMap } from &quot;rxjs/operators&quot;;
 import { SocketioService } from &#x27;@app/core/services/socketio/socketio.service&#x27;;
 
 import { environment } from &quot;@env/environment&quot;;
-import { Logger, I18nService } from &quot;@app/core&quot;;
+import { Logger } from &quot;@app/core&quot;;
 import { Store, select } from &quot;@ngrx/store&quot;;
 import { IAppState } from &quot;./core/store/state/app.state&quot;;
 import { ReveiveMsg } from &quot;./core/store/actions/chat.actions&quot;;
@@ -387,6 +375,9 @@ import { Message } from &quot;./core/models/message.interface&quot;;
 import { SetUserID } from &quot;./core/store/actions/settings.actions&quot;;
 import { IChatState } from &quot;./core/store/state/chat.state&quot;;
 import { selectChat } from &quot;./core/store/selectors/chat.selector&quot;;
+
+import enUS from &#x27;../translations/en-US.json&#x27;;
+import arEG from &#x27;../translations/ar-EG.json&#x27;;
 
 const log &#x3D; new Logger(&quot;App&quot;);
 
@@ -402,10 +393,12 @@ export class AppComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
     private translateService: TranslateService,
-    private i18nService: I18nService,
     private socket: SocketioService,
     private store: Store&lt;IAppState&gt;
-  ) {}
+  ) {
+    translateService.setTranslation(&#x27;en-US&#x27;, enUS);
+    translateService.setTranslation(&#x27;ar-EG&#x27;, arEG);
+  }
 
   async ngOnInit() {
     // Setup logger
@@ -418,10 +411,7 @@ export class AppComponent implements OnInit {
     });
     const id &#x3D; &lt;number&gt;await this.socket.userCreated$;
     this.store.dispatch(new SetUserID(id));
-
-    // Setup translations
-    this.i18nService.init(environment.defaultLanguage, environment.supportedLanguages);
-
+    
     const onNavigationEnd &#x3D; this.router.events.pipe(filter(event &#x3D;&gt; event instanceof NavigationEnd));
 
     // Change page title on navigation or language change, based on route data

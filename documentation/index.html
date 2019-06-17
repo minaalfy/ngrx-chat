@@ -31,38 +31,46 @@
                    <div class="content-data">
 
 <h1 id="chat-app">chat-app</h1>
-<p>An Angular Chat Application with Redux implementation using ngrx and Angular material.</p>
+<p>An Angular Chat Application using ngrx, Angular material and socket.io.</p>
+<p><img src="demo.jpg?raw=true" alt="Alt text" class="img-responsive" title="Demo"></p>
 <h1 id="features">Features</h1>
 <h3 id="app">App</h3>
 <div><pre class="line-numbers"><code class="language-none">- NGRX implementation
 - 2 Languages &quot;English and Arabic&quot;
 - 2 interface directions &quot;LTR, RTL&quot;
-- All customization saved in local storage</code></pre></div><h3 id="settings-page">Settings Page</h3>
-<div><pre class="line-numbers"><code class="language-none">- Ability to customize &quot;User name, Interface theme, Clock Display, Send messages on CTRL+ENTER, - - - Interface Language&quot;
-- Ability to reset all customization to defaults</code></pre></div><h3 id="chat-page">Chat Page</h3>
+- All customization saved in local storage</code></pre></div><h3 id="chat-page">Chat Page</h3>
 <div><pre class="line-numbers"><code class="language-none">- Socket.io based chat interface
-- Unique User Ids to identify user messages
-- 2 message themes one for current user messages floated right and other one for other people floated to left
-- animations for messages enterance
 - Emoji :)
+- Parser that can parse &quot;Youtube Videos, Images, URLs&quot;
 - Blink when receive message when the user on another tab
 - Unread messages counter
 - Nice Custom scrollbar with auto scroll to bottom
+- 2 message themes one for current user messages floated right and other one for other people floated to left
+- animations for messages enterance
 - save user entered text before leaving the page and restore it once get back to the page
-- send message on click send button or on CTRL+ENTER while focus on input.
+- send message on click send button OR on `CTRL+ENTER`.
 - Input autofocus on page init
-- Input text with Off autocomplete</code></pre></div><h1 id="todo">TODO</h1>
-<div><pre class="line-numbers"><code class="language-none">- Real Authentication
+- Input text with Off autocomplete</code></pre></div><h3 id="settings-page">Settings Page</h3>
+<div><pre class="line-numbers"><code class="language-none">- Ability to customize &quot;User name, Interface theme, Clock Display, Send messages on CTRL+ENTER, - - - Interface Language&quot;
+- Ability to reset all customization to defaults
+- Store user customization in localstorage and restore it on init the app.</code></pre></div><h1 id="todo">TODO</h1>
+<div><pre class="line-numbers"><code class="language-none">- Authentication
 - Chat history
 - Browser notifications and &quot;favico.js&quot; for Unread messages
-- Sounds for each action &quot;Audio sprite using HowlerJS&quot;</code></pre></div><h1 id="getting-started">Getting started</h1>
+- Sounds for each action &quot;Audio sprite using HowlerJS&quot;
+- Message grouping “sequence messages from same user”
+- Add Router animations</code></pre></div><h1 id="getting-started">Getting started</h1>
 <ol>
-<li><p>Go to project folder and install dependencies:
+<li><p>Go to project folder then navigate to /server and install server dependencies:
 | npm install</p>
 </li>
-<li><p>Launch development server, and open <code>localhost:4200</code> in your browser:
-<code>sh
-npm start</code></p>
+<li><p>back to main app folder using command 
+| cd ../
+after that launch the socket.io server using command
+| npm run server</p>
+</li>
+<li><p>Run <code>npm install</code> to install our app dependencies.
+Then Lanuch the angular app server using command <code>npm start</code> and open <code>localhost:4200</code> in your browser.</p>
 </li>
 </ol>
 <h1 id="project-structure">Project structure</h1>
@@ -91,77 +99,6 @@ src/                         project source code
 |- polyfills.ts              polyfills needed by Angular
 +- test.ts                   unit tests entry point
 reports/                     test and coverage reports</code></p>
-<h1 id="main-tasks">Main tasks</h1>
-<p>Task automation is based on <a href="https://docs.npmjs.com/misc/scripts">NPM scripts</a>.</p>
-<p>Task                            | Description
---------------------------------|--------------------------------------------------------------------------------------
-<code>npm start</code>                     | Run development server on <code>http://localhost:4200/</code>
-<code>npm run serve:sw</code>              | Run test server on <code>http://localhost:4200/</code> with service worker enabled
-<code>npm run build [-- --configuration=production]</code> | Lint code and build web app for production (with <a href="https://angular.io/guide/aot-compiler">AOT</a>) in <code>dist/</code> folder
-<code>npm test</code>                      | Run unit tests via <a href="https://karma-runner.github.io">Karma</a> in watch mode
-<code>npm run test:ci</code>               | Lint code and run unit tests once for continuous integration
-<code>npm run e2e</code>                   | Run e2e tests using <a href="http://www.protractortest.org">Protractor</a>
-<code>npm run lint</code>                  | Lint code
-<code>npm run translations:extract</code>  | Extract strings from code and templates to <code>src/app/translations/template.json</code>
-<code>npm run docs</code>                  | Display project documentation</p>
-<p>When building the application, you can specify the target configuration using the additional flag
-<code>--configuration &lt;name&gt;</code> (do not forget to prepend <code>--</code> to pass arguments to npm scripts).</p>
-<p>The default build configuration is <code>prod</code>.</p>
-<h2 id="development-server">Development server</h2>
-<p>Run <code>npm start</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change
-any of the source files.
-You should not use <code>ng serve</code> directly, as it does not use the backend proxy configuration by default.</p>
-<h2 id="code-scaffolding">Code scaffolding</h2>
-<p>Run <code>npm run generate -- component &lt;name&gt;</code> to generate a new component. You can also use
-<code>npm run generate -- directive|pipe|service|class|module</code>.</p>
-<p>If you have installed <a href="https://github.com/angular/angular-cli">angular-cli</a> globally with <code>npm install -g @angular/cli</code>,
-you can also use the command <code>ng generate</code> directly.</p>
-<h2 id="additional-tools">Additional tools</h2>
-<p>Tasks are mostly based on the <code>angular-cli</code> tool. Use <code>ng help</code> to get more help or go check out the
-<a href="https://github.com/angular/angular-cli">Angular-CLI README</a>.</p>
-<h1 id="whats-in-the-box">What&#39;s in the box</h1>
-<p>The app template is based on <a href="http://whatwg.org/html">HTML5</a>, <a href="http://www.typescriptlang.org">TypeScript</a> and
-<a href="http://sass-lang.com">Sass</a>. The translation files use the common <a href="http://www.json.org">JSON</a> format.</p>
-<h4 id="tools">Tools</h4>
-<p>Development, build and quality processes are based on <a href="https://github.com/angular/angular-cli">angular-cli</a> and
-<a href="https://docs.npmjs.com/misc/scripts">NPM scripts</a>, which includes:</p>
-<ul>
-<li>Optimized build and bundling process with <a href="https://webpack.github.io">Webpack</a></li>
-<li><a href="https://webpack.github.io/docs/webpack-dev-server.html">Development server</a> with backend proxy and live reload</li>
-<li>Cross-browser CSS with <a href="https://github.com/postcss/autoprefixer">autoprefixer</a> and
-<a href="https://github.com/ai/browserslist">browserslist</a></li>
-<li>Asset revisioning for <a href="https://webpack.github.io/docs/long-term-caching.html">better cache management</a></li>
-<li>Unit tests using <a href="http://jasmine.github.io">Jasmine</a> and <a href="https://karma-runner.github.io">Karma</a></li>
-<li>End-to-end tests using <a href="https://github.com/angular/protractor">Protractor</a></li>
-<li>Static code analysis: <a href="https://github.com/palantir/tslint">TSLint</a>, <a href="https://github.com/mgechev/codelyzer">Codelyzer</a>,
-<a href="http://stylelint.io">Stylelint</a> and <a href="http://htmlhint.com/">HTMLHint</a></li>
-<li>Local knowledgebase server using <a href="https://github.com/sinedied/hads">Hads</a></li>
-</ul>
-<h4 id="libraries">Libraries</h4>
-<ul>
-<li><a href="https://angular.io">Angular</a></li>
-<li><a href="https://material.angular.io">Angular Material</a></li>
-<li><a href="https://github.com/angular/flex-layout">Angular Flex Layout</a></li>
-<li><a href="https://material.io/icons/">Material Icons</a></li>
-<li><a href="http://reactivex.io/rxjs">RxJS</a></li>
-<li><a href="https://github.com/ngx-translate/core">ngx-translate</a></li>
-<li><a href="https://lodash.com">Lodash</a></li>
-</ul>
-<h4 id="coding-guides">Coding guides</h4>
-<ul>
-<li><a href="docs/coding-guides/angular.md">Angular</a></li>
-<li><a href="docs/coding-guides/typescript.md">TypeScript</a></li>
-<li><a href="docs/coding-guides/sass.md">Sass</a></li>
-<li><a href="docs/coding-guides/html.md">HTML</a></li>
-<li><a href="docs/coding-guides/unit-tests.md">Unit tests</a></li>
-<li><a href="docs/coding-guides/e2e-tests.md">End-to-end tests</a></li>
-</ul>
-<h4 id="other-documentation">Other documentation</h4>
-<ul>
-<li><a href="docs/i18n.md">I18n guide</a></li>
-<li><a href="docs/updating.md">Updating dependencies and tools</a></li>
-<li><a href="docs/routing.md">Browser routing</a></li>
-</ul>
 
 
 

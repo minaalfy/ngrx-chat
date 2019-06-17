@@ -76,13 +76,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/ChatModule.html" data-type="entity-link">ChatModule</a>
                                     <li class="chapter inner">
                                         <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                            'data-target="#components-links-module-ChatModule-c34b071e04c80a43f064001c6f17e9d3"' : 'data-target="#xs-components-links-module-ChatModule-c34b071e04c80a43f064001c6f17e9d3"' }>
+                                            'data-target="#components-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' : 'data-target="#xs-components-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' }>
                                             <span class="icon ion-md-cog"></span>
                                             <span>Components</span>
                                             <span class="icon ion-ios-arrow-down"></span>
                                         </div>
-                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ChatModule-c34b071e04c80a43f064001c6f17e9d3"' :
-                                            'id="xs-components-links-module-ChatModule-c34b071e04c80a43f064001c6f17e9d3"' }>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="components-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' :
+                                            'id="xs-components-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' }>
                                             <li class="link">
                                                 <a href="components/ChatComponent.html"
                                                     data-type="entity-link" data-context="sub-entity" data-context-id="modules">ChatComponent</a>
@@ -95,19 +95,34 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                     </li>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-ChatModule-c34b071e04c80a43f064001c6f17e9d3"' : 'data-target="#xs-injectables-links-module-ChatModule-c34b071e04c80a43f064001c6f17e9d3"' }>
+                                        'data-target="#injectables-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' : 'data-target="#xs-injectables-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-ChatModule-c34b071e04c80a43f064001c6f17e9d3"' :
-                                        'id="xs-injectables-links-module-ChatModule-c34b071e04c80a43f064001c6f17e9d3"' }>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' :
+                                        'id="xs-injectables-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' }>
                                         <li class="link">
                                             <a href="injectables/SocketioService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>SocketioService</a>
                                         </li>
                                     </ul>
                                 </li>
+                                    <li class="chapter inner">
+                                        <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
+                                            'data-target="#pipes-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' : 'data-target="#xs-pipes-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' }>
+                                            <span class="icon ion-md-add"></span>
+                                            <span>Pipes</span>
+                                            <span class="icon ion-ios-arrow-down"></span>
+                                        </div>
+                                        <ul class="links collapse" ${ isNormalMode ? 'id="pipes-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' :
+                                            'id="xs-pipes-links-module-ChatModule-0ce0b39103973502bf863d05c8704d4c"' }>
+                                            <li class="link">
+                                                <a href="pipes/ParserPipe.html"
+                                                    data-type="entity-link" data-context="sub-entity" data-context-id="modules">ParserPipe</a>
+                                            </li>
+                                        </ul>
+                                    </li>
                             </li>
                             <li class="link">
                                 <a href="modules/ChatRoutingModule.html" data-type="entity-link">ChatRoutingModule</a>
@@ -116,17 +131,13 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="modules/CoreModule.html" data-type="entity-link">CoreModule</a>
                                 <li class="chapter inner">
                                     <div class="simple menu-toggler" data-toggle="collapse" ${ isNormalMode ?
-                                        'data-target="#injectables-links-module-CoreModule-20aac40631fa73a9dd66e11051a9b127"' : 'data-target="#xs-injectables-links-module-CoreModule-20aac40631fa73a9dd66e11051a9b127"' }>
+                                        'data-target="#injectables-links-module-CoreModule-903d6a189e3897e88dbf9a0e6d8cc1bb"' : 'data-target="#xs-injectables-links-module-CoreModule-903d6a189e3897e88dbf9a0e6d8cc1bb"' }>
                                         <span class="icon ion-md-arrow-round-down"></span>
                                         <span>Injectables</span>
                                         <span class="icon ion-ios-arrow-down"></span>
                                     </div>
-                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CoreModule-20aac40631fa73a9dd66e11051a9b127"' :
-                                        'id="xs-injectables-links-module-CoreModule-20aac40631fa73a9dd66e11051a9b127"' }>
-                                        <li class="link">
-                                            <a href="injectables/I18nService.html"
-                                                data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>I18nService</a>
-                                        </li>
+                                    <ul class="links collapse" ${ isNormalMode ? 'id="injectables-links-module-CoreModule-903d6a189e3897e88dbf9a0e6d8cc1bb"' :
+                                        'id="xs-injectables-links-module-CoreModule-903d6a189e3897e88dbf9a0e6d8cc1bb"' }>
                                         <li class="link">
                                             <a href="injectables/LocalStorageService.html"
                                                 data-type="entity-link" data-context="sub-entity" data-context-id="modules" }>LocalStorageService</a>

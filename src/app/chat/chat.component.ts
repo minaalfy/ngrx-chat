@@ -1,7 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild, QueryList, ViewChildren } from '@angular/core';
 import { NgScrollbar } from 'ngx-scrollbar';
 import { MatListItem } from '@angular/material';
-import { Message } from '@app/core/models/message.interface';
 import { Store, select } from '@ngrx/store';
 import { IAppState } from '@app/core/store/state/app.state';
 import { Observable } from 'rxjs';
@@ -74,7 +73,7 @@ export class ChatComponent implements OnInit {
     });
   }
   /**
-  * remove blick animation, reset the unread message counter and scroll messages to bottom
+  * remove blink animation, reset the unread message counter and scroll messages to bottom
   */
   ngAfterViewInit(){
     setTimeout(() => {

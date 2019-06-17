@@ -31,18 +31,4 @@ export class ParserPipe implements PipeTransform {
       }
     });
   }
-  // parseVideo(txt: string) {
-  //   const p = /(?:https?:\/\/)?(?:m\.|www\.)?(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))((\w|-){11})(?:\S+)?/;
-  //   const video = txt.match(p);
-  //   if (video) {
-  //     const before = txt.split(video[0])[0];
-  //     const after = txt.split(video[0])[1];
-  //     console.log(txt.replace(video[0], ''));
-  //     return `<div>${before}</div><div class="video-container"><iframe src="https://www.youtube.com/embed/${video[1]}" frameborder="0" allowfullscreen></iframe></div><div>${after}</div>`;
-  //   }
-  //   return false;
-  // }
-  // parseImage(txt: string){
-  //   const p = /\.(jpeg|jpg|gif|png)$/;
-  // }
 }

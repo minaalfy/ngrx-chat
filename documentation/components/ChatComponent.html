@@ -204,7 +204,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/chat/chat.component.ts:46</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/chat/chat.component.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -347,15 +347,15 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="79"
-                            class="link-to-prism">src/app/chat/chat.component.ts:79</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="78"
+                            class="link-to-prism">src/app/chat/chat.component.ts:78</a></div>
                 </td>
             </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>remove blick animation, reset the unread message counter and scroll messages to bottom</p>
+                    <div class="io-description"><p>remove blink animation, reset the unread message counter and scroll messages to bottom</p>
 </div>
 
                     <div class="io-description">
@@ -429,8 +429,8 @@
 
             <tr>
                 <td class="col-md-4">
-                    <div class="io-line">Defined in <a href="" data-line="56"
-                            class="link-to-prism">src/app/chat/chat.component.ts:56</a></div>
+                    <div class="io-line">Defined in <a href="" data-line="55"
+                            class="link-to-prism">src/app/chat/chat.component.ts:55</a></div>
                 </td>
             </tr>
 
@@ -546,7 +546,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/chat/chat.component.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/chat/chat.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -578,7 +578,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/chat/chat.component.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/chat/chat.component.ts:45</a></div>
                             </td>
                         </tr>
 
@@ -620,7 +620,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/chat/chat.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/chat/chat.component.ts:25</a></div>
                             </td>
                         </tr>
 
@@ -662,7 +662,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/chat/chat.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/chat/chat.component.ts:33</a></div>
                             </td>
                         </tr>
 
@@ -704,7 +704,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/chat/chat.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/chat/chat.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -737,7 +737,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/chat/chat.component.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/chat/chat.component.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -759,7 +759,6 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, ElementRef, ViewChild, QueryList, ViewChildren } from &#x27;@angular/core&#x27;;
 import { NgScrollbar } from &#x27;ngx-scrollbar&#x27;;
 import { MatListItem } from &#x27;@angular/material&#x27;;
-import { Message } from &#x27;@app/core/models/message.interface&#x27;;
 import { Store, select } from &#x27;@ngrx/store&#x27;;
 import { IAppState } from &#x27;@app/core/store/state/app.state&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
@@ -832,7 +831,7 @@ export class ChatComponent implements OnInit {
     });
   }
   /**
-  * remove blick animation, reset the unread message counter and scroll messages to bottom
+  * remove blink animation, reset the unread message counter and scroll messages to bottom
   */
   ngAfterViewInit(){
     setTimeout(() &#x3D;&gt; {
@@ -843,6 +842,7 @@ export class ChatComponent implements OnInit {
       this.messagesItems.changes.subscribe(() &#x3D;&gt; {
         this.scrollbarRef.scrollToBottom(200);
       });
+      this.scrollbarRef.scrollToBottom(200);
     });
   }
   /**
@@ -890,7 +890,7 @@ export class ChatComponent implements OnInit {
             [ngModel]&#x3D;&quot;text&quot;
             (keydown.control.enter)&#x3D;&quot;appstate.settings?.sendonenter ? sendMessage(messageText.value) : false&quot;&gt;
             &lt;mat-button-toggle disableRipple&#x3D;&quot;true&quot; [checked]&#x3D;&quot;emojiShow&quot; (change)&#x3D;&quot;emojiShow &#x3D; $event.source.checked;messageText.focus()&quot;&gt;&lt;mat-icon&gt;sentiment_satisfied_alt&lt;/mat-icon&gt;&lt;/mat-button-toggle&gt;
-            &lt;button mat-icon-button matSuffix color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;sendMessage(messageText.value)&quot;&gt;
+            &lt;button mat-icon-button matSuffix fxFlexAlign&#x3D;&quot;center&quot; color&#x3D;&quot;primary&quot; (click)&#x3D;&quot;sendMessage(messageText.value)&quot;&gt;
               &lt;mat-icon&gt;send&lt;/mat-icon&gt;
             &lt;/button&gt;
           &lt;emoji-mart [title]&#x3D;&quot;&#x27;ChatView.pickEmoji&#x27; | translate&quot; [hidden]&#x3D;&quot;!emojiShow&quot; emoji&#x3D;&quot;point_up&quot; [i18n]&#x3D;&quot;&#x27;ChatView.emoji&#x27; | translate&quot; [showPreview]&#x3D;&quot;false&quot; [isNative]&#x3D;&quot;true&quot; (emojiSelect)&#x3D;&quot;addEmoji($event)&quot;&gt;&lt;/emoji-mart&gt;
@@ -918,6 +918,7 @@ ng-scrollbar {
         outline: none;
         flex: 1;
         padding: 0 12px;
+        border-radius: 0 0 4px 4px;
         &amp;:focus {
             outline: none;
         }
@@ -968,7 +969,7 @@ emoji-mart {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="main-container">  <mat-card class="no-padding">    <mat-card-content *ngIf="appstate$ | async as appstate">      <ng-scrollbar class="chat-list" shown="always">        <app-message #allMessagesItems *ngFor="let msg of appstate.chat.messages" [message]="msg"></app-message>      </ng-scrollbar>      <div class="chat-input">        <mat-divider></mat-divider>        <div class="chat-input" fxLayout="row">          <input autocomplete="off" matInput [placeholder]="\'ChatView.EnterMSG\' | translate" #messageText            [ngModel]="text"            (keydown.control.enter)="appstate.settings?.sendonenter ? sendMessage(messageText.value) : false">            <mat-button-toggle disableRipple="true" [checked]="emojiShow" (change)="emojiShow = $event.source.checked;messageText.focus()"><mat-icon>sentiment_satisfied_alt</mat-icon></mat-button-toggle>            <button mat-icon-button matSuffix color="primary" (click)="sendMessage(messageText.value)">              <mat-icon>send</mat-icon>            </button>          <emoji-mart [title]="\'ChatView.pickEmoji\' | translate" [hidden]="!emojiShow" emoji="point_up" [i18n]="\'ChatView.emoji\' | translate" [showPreview]="false" [isNative]="true" (emojiSelect)="addEmoji($event)"></emoji-mart>        </div>      </div>    </mat-card-content>  </mat-card></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="main-container">  <mat-card class="no-padding">    <mat-card-content *ngIf="appstate$ | async as appstate">      <ng-scrollbar class="chat-list" shown="always">        <app-message #allMessagesItems *ngFor="let msg of appstate.chat.messages" [message]="msg"></app-message>      </ng-scrollbar>      <div class="chat-input">        <mat-divider></mat-divider>        <div class="chat-input" fxLayout="row">          <input autocomplete="off" matInput [placeholder]="\'ChatView.EnterMSG\' | translate" #messageText            [ngModel]="text"            (keydown.control.enter)="appstate.settings?.sendonenter ? sendMessage(messageText.value) : false">            <mat-button-toggle disableRipple="true" [checked]="emojiShow" (change)="emojiShow = $event.source.checked;messageText.focus()"><mat-icon>sentiment_satisfied_alt</mat-icon></mat-button-toggle>            <button mat-icon-button matSuffix fxFlexAlign="center" color="primary" (click)="sendMessage(messageText.value)">              <mat-icon>send</mat-icon>            </button>          <emoji-mart [title]="\'ChatView.pickEmoji\' | translate" [hidden]="!emojiShow" emoji="point_up" [i18n]="\'ChatView.emoji\' | translate" [showPreview]="false" [isNative]="true" (emojiSelect)="addEmoji($event)"></emoji-mart>        </div>      </div>    </mat-card-content>  </mat-card></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChatComponent', 'selector': 'app-chat'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'SettingsComponent', 'selector': 'app-settings'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ChatComponent'};

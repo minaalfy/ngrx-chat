@@ -457,7 +457,7 @@ export class MessageComponent implements OnInit {
       {{message.time | date: format}}
     &lt;/small&gt;
     &lt;div class&#x3D;&quot;message&quot;&gt;
-      {{message.message}}
+      &lt;div [outerHTML]&#x3D;&quot;message.message | parser&quot;&gt;&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -470,7 +470,6 @@ export class MessageComponent implements OnInit {
                 <pre class="line-numbers"><code class="language-scss">.message {
     border-radius: 20px;
     clear: both;
-    max-width: 80%;
     padding: 10px 15px;
     position: relative;
   
@@ -484,6 +483,11 @@ export class MessageComponent implements OnInit {
       z-index: -1;
     }
 }
+@media only screen and (min-width: 678px) {
+  .message {
+    max-width: 80%;
+  }
+}
 
 .message-meta {
   margin: 0 50px;
@@ -493,10 +497,12 @@ export class MessageComponent implements OnInit {
   display: flex;
   flex-direction: column;
   margin: 5px 0;
+  flex: 10;
 }
 .from-them {
   transform-origin: bottom left;
   order: 1;
+  align-items: flex-start;
   .message {
     background: #dedede;
     margin-left: 30px;
@@ -504,13 +510,13 @@ export class MessageComponent implements OnInit {
       box-shadow: inset 1px 9px 0 4px #fff, inset -9px 0px 0 2px #dedede, 0 0 0 1px #fff;
       left: -19px;
     }
-    .message-meta {align-self: flex-start;}
   }
 }
 .from-me {
   transform-origin: bottom right;
   order: 3;
   text-align: right;
+  align-items: flex-end;
   .message {
     background: #2d8cfa;
     color: #fff;
@@ -520,15 +526,14 @@ export class MessageComponent implements OnInit {
       right: -19px;
     }
   }
-  .message-meta {align-self: flex-end;}
 }
 .flex-fix {
   flex: 1;
   order: 2;
 }
 :host-context([dir&#x3D;rtl])  {
-  .from-me {order: 1;}
-  .from-them {order: 3;text-align: left}
+  .from-me {order: 1;align-items: flex-start;}
+  .from-them {order: 3;text-align: left;align-items: flex-end;}
 }
 :host-context(.dark-theme) {
   .from-them{
@@ -547,7 +552,8 @@ export class MessageComponent implements OnInit {
       }
     }
   }
-}</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -575,7 +581,7 @@ export class MessageComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="settings$ | async as settings" fxLayout="row">  <div class="flex-fix"></div>  <div class="clearfix from-them" @items    [ngClass]="{\'from-me\' : (message?.user?.userid === settings?.user?.userid), \'from-them\': (message?.user?.userid !== settings?.user?.userid)}">    <small class="message-meta">      <span *ngIf="message?.user?.userid !== settings?.user?.userid">{{message.user?.username}} , </span>      {{message.time | date: format}}    </small>    <div class="message">      {{message.message}}    </div>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div *ngIf="settings$ | async as settings" fxLayout="row">  <div class="flex-fix"></div>  <div class="clearfix from-them" @items    [ngClass]="{\'from-me\' : (message?.user?.userid === settings?.user?.userid), \'from-them\': (message?.user?.userid !== settings?.user?.userid)}">    <small class="message-meta">      <span *ngIf="message?.user?.userid !== settings?.user?.userid">{{message.user?.username}} , </span>      {{message.time | date: format}}    </small>    <div class="message">      <div [outerHTML]="message.message | parser"></div>    </div>  </div></div></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ChatComponent', 'selector': 'app-chat'},{'name': 'MessageComponent', 'selector': 'app-message'},{'name': 'SettingsComponent', 'selector': 'app-settings'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'MessageComponent'};
