@@ -1,7 +1,7 @@
 # chat-app
 An Angular Chat Application using ngrx, Angular material and socket.io.
 
-![Alt text](demo.jpg?raw=true "Demo")
+![Alt text](demo.jpg?raw=true "Screen Shots")
 
 # Features
 ### App
