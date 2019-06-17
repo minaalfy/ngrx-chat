@@ -63,23 +63,30 @@ body {
 }
 
 .emoji-mart{
-  border-radius: 0 !important;}
+  border-radius: 0 !important;
+}
 
-  .image-container {
+.image-container {
     display: block;
     img {
       max-height: 260px;
       display: block;
       max-width: 100%;
+      border-radius: 10px;
     }
-  }
+}
 
 
 
 .video-container {
-  position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%;
+  position: relative; 
+  padding-bottom: 56.25%; 
+  height: 0; 
+  overflow: hidden; 
+  max-width: 100%;
   min-width: 300px;
-  }
+  border-radius: 10px;
+}
 
 
 .video-container iframe,
